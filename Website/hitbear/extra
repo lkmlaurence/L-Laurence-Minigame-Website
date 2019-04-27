@@ -1,0 +1,45 @@
+ jQuery(document).ready(function(){
+        let add = 0
+       function game_over(){
+           
+        jQuery('.mole1').animate({'top':'100%'},300);
+            jQuery('.mole2').animate({'top':'100%'},300);
+            jQuery('.mole3').animate({'top':'100%'},300);
+            jQuery('.score').html('Game Over!');
+            jQuery('.score').append('<div class="try_again">TRY AGAIN</div>');
+       }
+       
+       
+        function start(){
+            add = 0;
+            jQuery('.score').html('Score:' + add);
+        jQuery('.mole').animate({'top':'0%'},5000,function(){
+            game_over()
+         
+            
+            jQuery('.try_again').click(function(){start();});
+        
+
+
+        });
+   }
+
+    
+        jQuery('.mole').hover(function(){
+           
+            jQuery(this).css('background-image','url(hurt.bmp)');
+            jQuery(this).stop().animate({"top":"100%"},300,function(){
+                add = add - (-1);
+                jQuery('.score').html('Score:' + add)
+                jQuery(this).css('background-image','url(tenor.bmp)');
+                jQuery(this).animate({"top":"0%"},5000);
+            
+
+            });
+            
+
+
+        });
+
+    
+});
