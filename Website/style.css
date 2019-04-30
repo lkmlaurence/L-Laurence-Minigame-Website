@@ -63,22 +63,24 @@ ul li a:hover{
 
 .title{
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 35%;
+    left: 34%;
     transform: translate(-50%-50%);
+    color: orange
 }
 
 .title h2{
     color: #fff;
     font-size: 50px;
-    left: 20%
+    left: 20%;
+    color: orange
 
 }
 
 .titlebutton{
     position: absolute;
-    top: 55%;
-    left: 52%;
+    top: 58%;
+    left: 50%;
     transform: translate(-50%,-50%);
 }
 
@@ -87,6 +89,12 @@ ul li a:hover{
     padding: 10px 30px;
     color: #fff;
     text-decoration: none;
+}
+
+.titlepicture{
+    position: absolute;
+    top: 15%;
+    left : 40%
 }
 
 
