@@ -1,7 +1,7 @@
 
 
 jQuery(document).ready(function(){
-    var score=0;
+    let score=0;
     
     function game_over(){
         jQuery('.mole').animate({'top':'100%'},100);

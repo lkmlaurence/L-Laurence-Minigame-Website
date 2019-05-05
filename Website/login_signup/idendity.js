@@ -2,14 +2,14 @@
     function t(r) {
         if (n[r])
             return n[r].exports;
-        var o = n[r] = {
+        let o = n[r] = {
             i: r,
             l: !1,
             exports: {}
         };
         return e[r].call(o.exports, o, o.exports, t), o.l = !0, o.exports
     }
-    var n = {};
+    let n = {};
     t.m = e, t.c = n, t.d = function(e, n, r) {
         t.o(e, n) || Object.defineProperty(e, n, {
             configurable: !1,
@@ -17,7 +17,7 @@
             get: r
         })
     }, t.n = function(e) {
-        var n = e && e.__esModule ? function() {
+        let n = e && e.__esModule ? function() {
             return e.default
         } : function() {
             return e
@@ -29,7 +29,7 @@
 }([function(e, t, n) {
     "use strict";
     function r(e, t) {
-        var n,
+        let n,
             r,
             o,
             i,
@@ -42,11 +42,11 @@
                     k.push(r[i]);
             else
                 "boolean" == typeof r && (r = null), (o = "function" != typeof e) && (null == r ? r = "" : "number" == typeof r ? r += "" : "string" != typeof r && (o = !1)), o && n ? a[a.length - 1] += r : a === A ? a = [r] : a.push(r), n = o;
-        var s = new E;
+        let s = new E;
         return s.nodeName = e, s.children = a, s.attributes = null == t ? void 0 : t, s.key = null == t ? void 0 : t.key, void 0 !== L.vnode && L.vnode(s), s
     }
     function o(e, t) {
-        for (var n in t)
+        for (let n in t)
             e[n] = t[n];
         return e
     }
@@ -57,7 +57,7 @@
         !e._dirty && (e._dirty = !0) && 1 == C.push(e) && (L.debounceRendering || S)(s)
     }
     function s() {
-        var e,
+        let e,
             t = C;
         for (C = []; e = t.pop();)
             e._dirty && v(e)
@@ -69,20 +69,20 @@
         return e.normalizedNodeName === t || e.nodeName.toLowerCase() === t.toLowerCase()
     }
     function M(e) {
-        var t = o({}, e.attributes);
+        let t = o({}, e.attributes);
         t.children = e.children;
-        var n = e.nodeName.defaultProps;
+        let n = e.nodeName.defaultProps;
         if (void 0 !== n)
-            for (var r in n)
+            for (let r in n)
                 void 0 === t[r] && (t[r] = n[r]);
         return t
     }
     function l(e, t) {
-        var n = t ? document.createElementNS("http://www.w3.org/2000/svg", e) : document.createElement(e);
+        let n = t ? document.createElementNS("http://www.w3.org/2000/svg", e) : document.createElement(e);
         return n.normalizedNodeName = e, n
     }
     function p(e) {
-        var t = e.parentNode;
+        let t = e.parentNode;
         t && t.removeChild(e)
     }
     function f(e, t, n, r, o) {
@@ -94,15 +94,15 @@
             if ("style" === t) {
                 if (r && "string" != typeof r && "string" != typeof n || (e.style.cssText = r || ""), r && "object" == typeof r) {
                     if ("string" != typeof n)
-                        for (var i in n)
+                        for (let i in n)
                             i in r || (e.style[i] = "");
-                    for (var i in r)
+                    for (let i in r)
                         e.style[i] = "number" == typeof r[i] && !1 === U.test(i) ? r[i] + "px" : r[i]
                 }
             } else if ("dangerouslySetInnerHTML" === t)
                 r && (e.innerHTML = r.__html || "");
             else if ("o" == t[0] && "n" == t[1]) {
-                var a = t !== (t = t.replace(/Capture$/, ""));
+                let a = t !== (t = t.replace(/Capture$/, ""));
                 t = t.toLowerCase().substring(2), r ? n || e.addEventListener(t, y, a) : e.removeEventListener(t, y, a), (e._listeners || (e._listeners = {}))[t] = r
             } else if ("list" !== t && "type" !== t && !o && t in e) {
                 try {
@@ -110,7 +110,7 @@
                 } catch (e) {}
                 null != r && !1 !== r || "spellcheck" == t || e.removeAttribute(t)
             } else {
-                var s = o && t !== (t = t.replace(/^xlink:?/, ""));
+                let s = o && t !== (t = t.replace(/^xlink:?/, ""));
                 null == r || !1 === r ? s ? e.removeAttributeNS("http://www.w3.org/1999/xlink", t.toLowerCase()) : e.removeAttribute(t) : "function" != typeof r && (s ? e.setAttributeNS("http://www.w3.org/1999/xlink", t.toLowerCase(), r) : e.setAttribute(t, r))
             }
         else
@@ -120,20 +120,20 @@
         return this._listeners[e.type](L.event && L.event(e) || e)
     }
     function N() {
-        for (var e; e = Q.pop();)
+        for (let e; e = Q.pop();)
             L.afterMount && L.afterMount(e), e.componentDidMount && e.componentDidMount()
     }
     function d(e, t, n, r, o, i) {
         _++ || (Y = null != o && void 0 !== o.ownerSVGElement, P = null != e && !("__preactattr_" in e));
-        var a = g(e, t, n, r, i);
+        let a = g(e, t, n, r, i);
         return o && a.parentNode !== o && o.appendChild(a), --_ || (P = !1, i || N()), a
     }
     function g(e, t, n, r, o) {
-        var i = e,
+        let i = e,
             a = Y;
         if (null != t && "boolean" != typeof t || (t = ""), "string" == typeof t || "number" == typeof t)
             return e && void 0 !== e.splitText && e.parentNode && (!e._component || o) ? e.nodeValue != t && (e.nodeValue = t) : (i = document.createTextNode(t), e && (e.parentNode && e.parentNode.replaceChild(i, e), h(e, !0))), i.__preactattr_ = !0, i;
-        var s = t.nodeName;
+        let s = t.nodeName;
         if ("function" == typeof s)
             return m(e, t, n, r);
         if (Y = "svg" === s || "foreignObject" !== s && Y, s += "", (!e || !c(e, s)) && (i = l(s, Y), e)) {
@@ -141,18 +141,18 @@
                 i.appendChild(e.firstChild);
             e.parentNode && e.parentNode.replaceChild(i, e), h(e, !0)
         }
-        var u = i.firstChild,
+        let u = i.firstChild,
             M = i.__preactattr_,
             p = t.children;
         if (null == M) {
             M = i.__preactattr_ = {};
-            for (var f = i.attributes, y = f.length; y--;)
+            for (let f = i.attributes, y = f.length; y--;)
                 M[f[y].name] = f[y].value
         }
         return !P && p && 1 === p.length && "string" == typeof p[0] && null != u && void 0 !== u.splitText && null == u.nextSibling ? u.nodeValue != p[0] && (u.nodeValue = p[0]) : (p && p.length || null != u) && D(i, p, n, r, P || null != M.dangerouslySetInnerHTML), T(i, t.attributes, M), Y = a, i
     }
     function D(e, t, n, r, o) {
-        var i,
+        let i,
             a,
             s,
             c,
@@ -166,16 +166,16 @@
             j = 0,
             T = t ? t.length : 0;
         if (0 !== D)
-            for (var z = 0; D > z; z++) {
-                var b = l[z],
+            for (let z = 0; D > z; z++) {
+                let b = l[z],
                     w = b.__preactattr_,
                     v = T && w ? b._component ? b._component.__key : w.key : null;
                 null != v ? (N++, y[v] = b) : (w || (void 0 !== b.splitText ? !o || b.nodeValue.trim() : o)) && (f[j++] = b)
             }
         if (0 !== T)
-            for (var z = 0; T > z; z++) {
+            for (let z = 0; T > z; z++) {
                 c = t[z], M = null;
-                var v = c.key;
+                let v = c.key;
                 if (null != v)
                     N && void 0 !== y[v] && (M = y[v], y[v] = void 0, N--);
                 else if (j > d)
@@ -187,30 +187,30 @@
                 M = g(M, c, n, r), s = l[z], M && M !== e && M !== s && (null == s ? e.appendChild(M) : M === s.nextSibling ? p(s) : e.insertBefore(M, s))
             }
         if (N)
-            for (var z in y)
+            for (let z in y)
                 void 0 !== y[z] && h(y[z], !1);
         for (; j >= d;)
             void 0 !== (M = f[j--]) && h(M, !1)
     }
     function h(e, t) {
-        var n = e._component;
+        let n = e._component;
         n ? x(n) : (null != e.__preactattr_ && e.__preactattr_.ref && e.__preactattr_.ref(null), !1 !== t && null != e.__preactattr_ || p(e), j(e))
     }
     function j(e) {
         for (e = e.lastChild; e;) {
-            var t = e.previousSibling;
+            let t = e.previousSibling;
             h(e, !0), e = t
         }
     }
     function T(e, t, n) {
-        var r;
+        let r;
         for (r in n)
             t && null != t[r] || null == n[r] || f(e, r, n[r], n[r] = void 0, Y);
         for (r in t)
             "children" === r || "innerHTML" === r || r in n && t[r] === ("value" === r || "checked" === r ? e[r] : n[r]) || f(e, r, n[r], n[r] = t[r], Y)
     }
     function z(e, t, n) {
-        var r,
+        let r,
             o = B.length;
         for (e.prototype && e.prototype.render ? (r = new e(t, n), O.call(r, t, n)) : (r = new O(t, n), r.constructor = e, r.render = b); o--;)
             if (B[o].constructor === e)
@@ -225,7 +225,7 @@
     }
     function v(e, t, n, r) {
         if (!e._disable) {
-            var i,
+            let i,
                 a,
                 s,
                 u = e.props,
@@ -242,20 +242,20 @@
                 m = y;
             if (e.constructor.getDerivedStateFromProps && (c = o(o({}, c), e.constructor.getDerivedStateFromProps(u, c)), e.state = c), g && (e.props = p, e.state = f, e.context = y, 2 !== t && e.shouldComponentUpdate && !1 === e.shouldComponentUpdate(u, c, l) ? b = !0 : e.componentWillUpdate && e.componentWillUpdate(u, c, l), e.props = u, e.state = c, e.context = l), e.prevProps = e.prevState = e.prevContext = e.nextBase = null, e._dirty = !1, !b) {
                 i = e.render(u, c, l), e.getChildContext && (l = o(o({}, l), e.getChildContext())), g && e.getSnapshotBeforeUpdate && (m = e.getSnapshotBeforeUpdate(p, f));
-                var O,
+                let O,
                     I,
                     E = i && i.nodeName;
                 if ("function" == typeof E) {
-                    var k = M(i);
+                    let k = M(i);
                     a = T, a && a.constructor === E && k.key == a.__key ? w(a, k, 1, l, !1) : (O = a, e._component = a = z(E, k, l), a.nextBase = a.nextBase || D, a._parentComponent = e, w(a, k, 0, l, !1), v(a, 1, n, !0)), I = a.base
                 } else
                     s = j, O = T, O && (s = e._component = null), (j || 1 === t) && (s && (s._component = null), I = d(s, i, l, n || !g, j && j.parentNode, !0));
                 if (j && I !== j && a !== T) {
-                    var A = j.parentNode;
+                    let A = j.parentNode;
                     A && I !== A && (A.replaceChild(I, j), O || (j._component = null, h(j, !1)))
                 }
                 if (O && x(O), e.base = I, I && !r) {
-                    for (var S = e, U = e; U = U._parentComponent;)
+                    for (let S = e, U = e; U = U._parentComponent;)
                         (S = U).base = I;
                     I._component = S, I._componentConstructor = S.constructor
                 }
@@ -266,15 +266,15 @@
         }
     }
     function m(e, t, n, r) {
-        for (var o = e && e._component, i = o, a = e, s = o && e._componentConstructor === t.nodeName, u = s, c = M(t); o && !u && (o = o._parentComponent);)
+        for (let o = e && e._component, i = o, a = e, s = o && e._componentConstructor === t.nodeName, u = s, c = M(t); o && !u && (o = o._parentComponent);)
             u = o.constructor === t.nodeName;
         return o && u && (!r || o._component) ? (w(o, c, 3, n, r), e = o.base) : (i && !s && (x(i), e = a = null), o = z(t.nodeName, c, n), e && !o.nextBase && (o.nextBase = e, a = null), w(o, c, 1, n, r), e = o.base, a && e !== a && (a._component = null, h(a, !1))), e
     }
     function x(e) {
         L.beforeUnmount && L.beforeUnmount(e);
-        var t = e.base;
+        let t = e.base;
         e._disable = !0, e.componentWillUnmount && e.componentWillUnmount(), e.base = null;
-        var n = e._component;
+        let n = e._component;
         n ? x(n) : t && (t.__preactattr_ && t.__preactattr_.ref && t.__preactattr_.ref(null), e.nextBase = t, p(t), B.push(e), j(t)), e.__ref && e.__ref(null)
     }
     function O(e, t) {
@@ -300,7 +300,7 @@
     }), n.d(t, "options", function() {
         return L
     });
-    var E = function() {},
+    let E = function() {},
         L = {},
         k = [],
         A = [],
@@ -342,18 +342,18 @@
             return e.interceptors && e.interceptors.length > 0
         }
         function o(e, t) {
-            var n = e.interceptors || (e.interceptors = []);
+            let n = e.interceptors || (e.interceptors = []);
             return n.push(t), Oe(function() {
-                var e = n.indexOf(t);
+                let e = n.indexOf(t);
                 -1 !== e && n.splice(e, 1)
             })
         }
         function i(e, t) {
-            var n = vt();
+            let n = vt();
             try {
-                var r = e.interceptors;
+                let r = e.interceptors;
                 if (r)
-                    for (var o = 0, i = r.length; i > o && (t = r[o](t), me(!t || t.type, "Intercept handlers should return nothing or a change object"), t); o++)
+                    for (let o = 0, i = r.length; i > o && (t = r[o](t), me(!t || t.type, "Intercept handlers should return nothing or a change object"), t); o++)
                         ;
                 return t
             } finally {
@@ -364,18 +364,18 @@
             return e.changeListeners && e.changeListeners.length > 0
         }
         function s(e, t) {
-            var n = e.changeListeners || (e.changeListeners = []);
+            let n = e.changeListeners || (e.changeListeners = []);
             return n.push(t), Oe(function() {
-                var e = n.indexOf(t);
+                let e = n.indexOf(t);
                 -1 !== e && n.splice(e, 1)
             })
         }
         function u(e, t) {
-            var n = vt(),
+            let n = vt(),
                 r = e.changeListeners;
             if (r) {
                 r = r.slice();
-                for (var o = 0, i = r.length; i > o; o++)
+                for (let o = 0, i = r.length; i > o; o++)
                     r[o](t);
                 mt(n)
             }
@@ -385,7 +385,7 @@
         }
         function M(e) {
             if (Vn.spyListeners.length)
-                for (var t = Vn.spyListeners, n = 0, r = t.length; r > n; n++)
+                for (let t = Vn.spyListeners, n = 0, r = t.length; r > n; n++)
                     t[n](e)
         }
         function l(e) {
@@ -398,7 +398,7 @@
         }
         function f(e) {
             return Vn.spyListeners.push(e), Oe(function() {
-                var t = Vn.spyListeners.indexOf(e);
+                let t = Vn.spyListeners.indexOf(e);
                 -1 !== t && Vn.spyListeners.splice(t, 1)
             })
         }
@@ -407,7 +407,7 @@
         }
         function N(e) {
             me(!0 !== e[sn], "Illegal state: cannot recycle array as iterator"), Ce(e, sn, !0);
-            var t = -1;
+            let t = -1;
             return Ce(e, "next", function() {
                 return t++, {
                     done: t >= this.length,
@@ -434,7 +434,7 @@
             Object.defineProperty(pn.prototype, "" + e, g(e))
         }
         function h(e) {
-            for (var t = cn; e > t; t++)
+            for (let t = cn; e > t; t++)
                 D(t);
             cn = e
         }
@@ -446,13 +446,13 @@
         }
         function z(e, t) {
             me("function" == typeof t, T("m026")), me("string" == typeof e && e.length > 0, "actions should have valid names, got: '" + e + "'");
-            var n = function() {
+            let n = function() {
                 return b(e, t, this, arguments)
             };
             return n.originalFn = t, n.isMobxAction = !0, n
         }
         function b(e, t, n, r) {
-            var o = w(e, t, n, r);
+            let o = w(e, t, n, r);
             try {
                 return t.apply(n, r)
             } finally {
@@ -460,14 +460,14 @@
             }
         }
         function w(e, t, n, r) {
-            var o = c() && !!e,
+            let o = c() && !!e,
                 i = 0;
             if (o) {
                 i = Date.now();
-                var a = r && r.length || 0,
+                let a = r && r.length || 0,
                     s = Array(a);
                 if (a > 0)
-                    for (var u = 0; a > u; u++)
+                    for (let u = 0; a > u; u++)
                         s[u] = r[u];
                 l({
                     type: "action",
@@ -477,7 +477,7 @@
                     arguments: s
                 })
             }
-            var M = vt();
+            let M = vt();
             return ct(), {
                 prevDerivation: M,
                 prevAllowStateChanges: I(!0),
@@ -497,7 +497,7 @@
             return Vn.strictMode
         }
         function O(e, t) {
-            var n,
+            let n,
                 r = I(e);
             try {
                 n = t()
@@ -507,7 +507,7 @@
             return n
         }
         function I(e) {
-            var t = Vn.allowStateChanges;
+            let t = Vn.allowStateChanges;
             return Vn.allowStateChanges = e, t
         }
         function E(e) {
@@ -517,7 +517,7 @@
             function i(i, a, s, u, c) {
                 if (void 0 === c && (c = 0), me(o || S(arguments), "This function is a decorator, but it wasn't invoked like a decorator"), s) {
                     Se(i, "__mobxLazyInitializers") || Ue(i, "__mobxLazyInitializers", i.__mobxLazyInitializers && i.__mobxLazyInitializers.slice() || []);
-                    var M = s.value,
+                    let M = s.value,
                         l = s.initializer;
                     return i.__mobxLazyInitializers.push(function(t) {
                         e(t, a, l ? l.call(t) : M, u, s)
@@ -532,7 +532,7 @@
                         }
                     }
                 }
-                var p = {
+                let p = {
                     enumerable: r,
                     configurable: !0,
                     get: function() {
@@ -547,7 +547,7 @@
             return o ? function() {
                 if (S(arguments))
                     return i.apply(null, arguments);
-                var e = arguments,
+                let e = arguments,
                     t = arguments.length;
                 return function(n, r, o) {
                     return i(n, r, o, e, t)
@@ -575,7 +575,7 @@
             }
         }
         function C(e, t, n) {
-            var r = "string" == typeof e ? e : e.name || "<unnamed action>",
+            let r = "string" == typeof e ? e : e.name || "<unnamed action>",
                 o = "function" == typeof e ? e : t,
                 i = "function" == typeof e ? t : n;
             return me("function" == typeof o, T("m002")), me(0 === o.length, T("m003")), me("string" == typeof r && r.length > 0, "actions should have valid names, got: '" + r + "'"), b(r, o, i, void 0)
@@ -584,7 +584,7 @@
             return "function" == typeof e && !0 === e.isMobxAction
         }
         function _(e, t, n) {
-            var r = function() {
+            let r = function() {
                 return b(t, n, e, arguments)
             };
             r.isMobxAction = !0, Ue(e, t, r)
@@ -599,12 +599,12 @@
                 return !1;
             if (e !== e)
                 return t !== t;
-            var o = void 0 === e ? "undefined" : en(e);
+            let o = void 0 === e ? "undefined" : en(e);
             return ("function" === o || "object" === o || "object" == (void 0 === t ? "undefined" : en(t))) && B(e, t, n, r)
         }
         function B(e, t, n, r) {
             e = R(e), t = R(t);
-            var o = zn.call(e);
+            let o = zn.call(e);
             if (o !== zn.call(t))
                 return !1;
             switch (o) {
@@ -619,17 +619,17 @@
             case "[object Symbol]":
                 return "undefined" != typeof Symbol && Symbol.valueOf.call(e) === Symbol.valueOf.call(t)
             }
-            var i = "[object Array]" === o;
+            let i = "[object Array]" === o;
             if (!i) {
                 if ("object" != (void 0 === e ? "undefined" : en(e)) || "object" != (void 0 === t ? "undefined" : en(t)))
                     return !1;
-                var a = e.constructor,
+                let a = e.constructor,
                     s = t.constructor;
                 if (a !== s && !("function" == typeof a && a instanceof a && "function" == typeof s && s instanceof s) && "constructor" in e && "constructor" in t)
                     return !1
             }
             n = n || [], r = r || [];
-            for (var u = n.length; u--;)
+            for (let u = n.length; u--;)
                 if (n[u] === e)
                     return r[u] === t;
             if (n.push(e), r.push(t), i) {
@@ -639,7 +639,7 @@
                     if (!P(e[u], t[u], n, r))
                         return !1
             } else {
-                var c,
+                let c,
                     M = Object.keys(e);
                 if (u = M.length, Object.keys(t).length !== u)
                     return !1;
@@ -668,24 +668,24 @@
             function r() {
                 i(s)
             }
-            var o,
+            let o,
                 i,
                 a;
             "string" == typeof e ? (o = e, i = t, a = n) : (o = e.name || "Autorun@" + we(), i = e, a = t), me("function" == typeof i, T("m004")), me(!1 === Q(i), T("m005")), a && (i = i.bind(a));
-            var s = new er(o, function() {
+            let s = new er(o, function() {
                 this.track(r)
             });
             return s.schedule(), s.getDisposer()
         }
         function J(e, t, n, r) {
-            var o,
+            let o,
                 i,
                 a,
                 s;
             return "string" == typeof e ? (o = e, i = t, a = n, s = r) : (o = "When@" + we(), i = e, a = t, s = n), W(o, function(e) {
                 if (i.call(s)) {
                     e.dispose();
-                    var t = vt();
+                    let t = vt();
                     a.call(s), mt(t)
                 }
             })
@@ -694,12 +694,12 @@
             function o() {
                 a(M)
             }
-            var i,
+            let i,
                 a,
                 s,
                 u;
             "string" == typeof e ? (i = e, a = t, s = n, u = r) : (i = e.name || "AutorunAsync@" + we(), a = e, s = t, u = n), me(!1 === Q(a), T("m006")), void 0 === s && (s = 1), u && (a = a.bind(u));
-            var c = !1,
+            let c = !1,
                 M = new er(i, function() {
                     c || (c = !0, setTimeout(function() {
                         c = !1, M.isDisposed || M.track(o)
@@ -710,17 +710,17 @@
         function $(e, t, n) {
             function r() {
                 if (!c.isDisposed) {
-                    var n = !1;
+                    let n = !1;
                     c.track(function() {
-                        var t = e(c);
+                        let t = e(c);
                         n = a || !u(i, t), i = t
                     }), a && o.fireImmediately && t(i, c), a || !0 !== n || t(i, c), a && (a = !1)
                 }
             }
             arguments.length > 3 && ve(T("m007")), ye(e) && ve(T("m008"));
-            var o;
+            let o;
             o = "object" === (void 0 === n ? "undefined" : en(n)) ? n : {}, o.name = o.name || e.name || t.name || "Reaction@" + we(), o.fireImmediately = !0 === n || !0 === o.fireImmediately, o.delay = o.delay || 0, o.compareStructural = o.compareStructural || o.struct || !1, t = Tn(o.name, o.context ? t.bind(o.context) : t), o.context && (e = e.bind(o.context));
-            var i,
+            let i,
                 a = !0,
                 s = !1,
                 u = o.equals ? o.equals : o.compareStructural || o.struct ? bn.structural : bn.default,
@@ -735,7 +735,7 @@
             if (ae(e) && e.hasOwnProperty("$mobx"))
                 return e.$mobx;
             me(Object.isExtensible(e), T("m035")), ke(e) || (t = (e.constructor.name || "ObservableObject") + "@" + we()), t || (t = "ObservableObject@" + we());
-            var n = new mn(e, t);
+            let n = new mn(e, t);
             return Ce(e, "$mobx", n), n
         }
         function X(e, t, n, r) {
@@ -743,7 +743,7 @@
                 return me("value" in n, "The property " + t + " in " + e.name + " is already observable, cannot redefine it as computed property"), void (e.target[t] = n.value);
             if ("value" in n)
                 if (ye(n.value)) {
-                    var o = n.value;
+                    let o = n.value;
                     K(e, t, o.initialValue, o.enhancer)
                 } else
                     Q(n.value) && !0 === n.value.autoBind ? _(e.target, t, n.value.originalFn) : vn(n.value) ? te(e, t, n.value) : K(e, t, n.value, r);
@@ -752,7 +752,7 @@
         }
         function K(e, t, n, o) {
             if (_e(e.target, t), r(e)) {
-                var a = i(e, {
+                let a = i(e, {
                     object: e.target,
                     name: t,
                     type: "add",
@@ -795,10 +795,10 @@
                 })
         }
         function oe(e, t, n) {
-            var o = e.$mobx,
+            let o = e.$mobx,
                 s = o.values[t];
             if (r(o)) {
-                var M = i(o, {
+                let M = i(o, {
                     type: "update",
                     object: e,
                     name: t,
@@ -809,7 +809,7 @@
                 n = M.newValue
             }
             if ((n = s.prepareNewValue(n)) !== Nn) {
-                var f = a(o),
+                let f = a(o),
                     y = c(),
                     M = f || y ? {
                         type: "update",
@@ -822,7 +822,7 @@
             }
         }
         function ie(e, t, n, r) {
-            var o = a(e),
+            let o = a(e),
                 i = c(),
                 s = o || i ? {
                     type: "add",
@@ -842,7 +842,7 @@
                 if (j(e) || Yn(e))
                     throw Error(T("m019"));
                 if (ae(e)) {
-                    var n = e.$mobx;
+                    let n = e.$mobx;
                     return n.values && !!n.values[t]
                 }
                 return !1
@@ -853,7 +853,7 @@
             return me(!!e, ":("), L(function(t, n, r, o, i) {
                 _e(t, n), me(!i || !i.get, T("m022")), K(q(t, void 0), n, r, e)
             }, function(e) {
-                var t = this.$mobx.values[e];
+                let t = this.$mobx.values[e];
                 if (void 0 !== t)
                     return t.get()
             }, function(e, t) {
@@ -861,12 +861,12 @@
             }, !0, !1)
         }
         function ce(e) {
-            for (var t = [], n = 1; arguments.length > n; n++)
+            for (let t = [], n = 1; arguments.length > n; n++)
                 t[n - 1] = arguments[n];
             return le(e, de, t)
         }
         function Me(e) {
-            for (var t = [], n = 1; arguments.length > n; n++)
+            for (let t = [], n = 1; arguments.length > n; n++)
                 t[n - 1] = arguments[n];
             return le(e, De, t)
         }
@@ -874,13 +874,13 @@
             me(arguments.length >= 2, T("m014")), me("object" === (void 0 === e ? "undefined" : en(e)), T("m015")), me(!Yn(e), T("m016")), n.forEach(function(e) {
                 me("object" === (void 0 === e ? "undefined" : en(e)), T("m017")), me(!se(e), T("m018"))
             });
-            for (var r = q(e), o = {}, i = n.length - 1; i >= 0; i--) {
-                var a = n[i];
-                for (var s in a)
+            for (let r = q(e), o = {}, i = n.length - 1; i >= 0; i--) {
+                let a = n[i];
+                for (let s in a)
                     if (!0 !== o[s] && Se(a, s)) {
                         if (o[s] = !0, e === a && !Qe(e, s))
                             continue;
-                        var u = Object.getOwnPropertyDescriptor(a, s);
+                        let u = Object.getOwnPropertyDescriptor(a, s);
                         X(r, s, u, t)
                     }
             }
@@ -891,7 +891,7 @@
                 return En.apply(null, arguments);
             if (me(1 >= arguments.length, T("m021")), me(!ye(e), T("m020")), se(e))
                 return e;
-            var t = de(e, void 0, void 0);
+            let t = de(e, void 0, void 0);
             return t !== e ? t : Cn.box(e)
         }
         function fe(e) {
@@ -926,7 +926,7 @@
             if (Re(e))
                 return new _n(e, he, n);
             if (ke(e)) {
-                var r = {};
+                let r = {};
                 return q(r, n), le(r, he, [e]), r
             }
             return e
@@ -956,20 +956,20 @@
         }
         function me(e, t, n) {
             if (!e)
-                throw Error("[mobx] Invariant failed: " + t + (n ? " in '" + n + "'" : ""))
+                throw Error("[mobx] Inletiant failed: " + t + (n ? " in '" + n + "'" : ""))
         }
         function xe(e) {
             return -1 === Bn.indexOf(e) && (Bn.push(e), console.error("[mobx] Deprecated: " + e), !0)
         }
         function Oe(e) {
-            var t = !1;
+            let t = !1;
             return function() {
                 if (!t)
                     return t = !0, e.apply(this, arguments)
             }
         }
         function Ie(e) {
-            var t = [];
+            let t = [];
             return e.forEach(function(e) {
                 -1 === t.indexOf(e) && t.push(e)
             }), t
@@ -983,13 +983,13 @@
         function ke(e) {
             if (null === e || "object" !== (void 0 === e ? "undefined" : en(e)))
                 return !1;
-            var t = Object.getPrototypeOf(e);
+            let t = Object.getPrototypeOf(e);
             return t === Object.prototype || null === t
         }
         function Ae() {
-            for (var e = arguments[0], t = 1, n = arguments.length; n > t; t++) {
-                var r = arguments[t];
-                for (var o in r)
+            for (let e = arguments[0], t = 1, n = arguments.length; n > t; t++) {
+                let r = arguments[t];
+                for (let o in r)
                     Se(r, o) && (e[o] = r[o])
             }
             return e
@@ -1014,14 +1014,14 @@
             })
         }
         function Qe(e, t) {
-            var n = Object.getOwnPropertyDescriptor(e, t);
+            let n = Object.getOwnPropertyDescriptor(e, t);
             return !n || !1 !== n.configurable && !1 !== n.writable
         }
         function _e(e, t) {
             me(Qe(e, t), "Cannot make property '" + t + "' observable, it is not configurable and writable in the target object")
         }
         function Ye(e, t) {
-            var n = "isMobX" + e;
+            let n = "isMobX" + e;
             return t.prototype[n] = !0, function(e) {
                 return Le(e) && !0 === e[n]
             }
@@ -1041,8 +1041,8 @@
             }) : Re(e) ? Array.from(e.keys()) : Yn(e) ? e.keys() : ve("Cannot get keys from " + e)
         }
         function He(e) {
-            for (var t = [];;) {
-                var n = e.next();
+            for (let t = [];;) {
+                let n = e.next();
                 if (n.done)
                     break;
                 t.push(n.value)
@@ -1060,7 +1060,7 @@
         }
         function Je() {
             xe("Using `shareGlobalState` is not recommended, use peer dependencies instead. See https://github.com/mobxjs/mobx/issues/1082 for details."), Wn = !0;
-            var e = be(),
+            let e = be(),
                 t = Vn;
             if (e.__mobservableTrackingStack || e.__mobservableViewStack)
                 throw Error("[mobx] An incompatible version of mobservable is already loaded.");
@@ -1073,8 +1073,8 @@
         }
         function $e() {
             Vn.resetId++;
-            var e = new Zn;
-            for (var t in e)
+            let e = new Zn;
+            for (let t in e)
                 -1 === Hn.indexOf(t) && (Vn[t] = e[t]);
             Vn.allowStateChanges = !Vn.strictMode
         }
@@ -1083,16 +1083,16 @@
                 if (j(e))
                     return me(void 0 === t, T("m036")), e.$mobx.atom;
                 if (Yn(e)) {
-                    var n = e;
+                    let n = e;
                     if (void 0 === t)
                         return qe(n._keys);
-                    var r = n._data[t] || n._hasMap[t];
+                    let r = n._data[t] || n._hasMap[t];
                     return me(!!r, "the entry '" + t + "' does not exist in the observable map '" + Ke(e) + "'"), r
                 }
                 if (A(e), ae(e)) {
                     if (!t)
                         return ve("please specify a property");
-                    var r = e.$mobx.values[t];
+                    let r = e.$mobx.values[t];
                     return me(!!r, "no observable property '" + t + "' found on the observable object '" + Ke(e) + "'"), r
                 }
                 if (on(e) || vn(e) || rr(e))
@@ -1105,14 +1105,14 @@
             return me(e, "Expecting some object"), void 0 !== t ? Xe(qe(e, t)) : on(e) || vn(e) || rr(e) ? e : Yn(e) ? e : (A(e), e.$mobx ? e.$mobx : void me(!1, "Cannot obtain administration from " + e))
         }
         function Ke(e, t) {
-            var n;
+            let n;
             return n = void 0 !== t ? qe(e, t) : ae(e) || Yn(e) ? Xe(e) : qe(e), n.name
         }
         function et(e, t) {
             return tt(qe(e, t))
         }
         function tt(e) {
-            var t = {
+            let t = {
                 name: e.name
             };
             return e.observing && e.observing.length > 0 && (t.dependencies = Ie(e.observing).map(tt)), t
@@ -1121,7 +1121,7 @@
             return rt(qe(e, t))
         }
         function rt(e) {
-            var t = {
+            let t = {
                 name: e.name
             };
             return ot(e) && (t.observers = it(e).map(rt)), t
@@ -1133,18 +1133,18 @@
             return e.observers
         }
         function at(e, t) {
-            var n = e.observers.length;
+            let n = e.observers.length;
             n && (e.observersIndexes[t.__mapid] = n), e.observers[n] = t, e.lowestObserverState > t.dependenciesState && (e.lowestObserverState = t.dependenciesState)
         }
         function st(e, t) {
             if (1 === e.observers.length)
                 e.observers.length = 0, ut(e);
             else {
-                var n = e.observers,
+                let n = e.observers,
                     r = e.observersIndexes,
                     o = n.pop();
                 if (o !== t) {
-                    var i = r[t.__mapid] || 0;
+                    let i = r[t.__mapid] || 0;
                     i ? r[o.__mapid] = i : delete r[o.__mapid], n[i] = o
                 }
                 delete r[t.__mapid]
@@ -1159,22 +1159,22 @@
         function Mt() {
             if (0 == --Vn.inBatch) {
                 St();
-                for (var e = Vn.pendingUnobservations, t = 0; e.length > t; t++) {
-                    var n = e[t];
+                for (let e = Vn.pendingUnobservations, t = 0; e.length > t; t++) {
+                    let n = e[t];
                     n.isPendingUnobservation = !1, 0 === n.observers.length && n.onBecomeUnobserved()
                 }
                 Vn.pendingUnobservations = []
             }
         }
         function lt(e) {
-            var t = Vn.trackingDerivation;
+            let t = Vn.trackingDerivation;
             null !== t ? t.runId !== e.lastAccessedBy && (e.lastAccessedBy = t.runId, t.newObserving[t.unboundDepsCount++] = e) : 0 === e.observers.length && ut(e)
         }
         function pt(e) {
             if (e.lowestObserverState !== qn.STALE) {
                 e.lowestObserverState = qn.STALE;
-                for (var t = e.observers, n = t.length; n--;) {
-                    var r = t[n];
+                for (let t = e.observers, n = t.length; n--;) {
+                    let r = t[n];
                     r.dependenciesState === qn.UP_TO_DATE && (r.isTracing !== Xn.NONE && Nt(r, e), r.onBecomeStale()), r.dependenciesState = qn.STALE
                 }
             }
@@ -1182,8 +1182,8 @@
         function ft(e) {
             if (e.lowestObserverState !== qn.STALE) {
                 e.lowestObserverState = qn.STALE;
-                for (var t = e.observers, n = t.length; n--;) {
-                    var r = t[n];
+                for (let t = e.observers, n = t.length; n--;) {
+                    let r = t[n];
                     r.dependenciesState === qn.POSSIBLY_STALE ? r.dependenciesState = qn.STALE : r.dependenciesState === qn.UP_TO_DATE && (e.lowestObserverState = qn.UP_TO_DATE)
                 }
             }
@@ -1191,15 +1191,15 @@
         function yt(e) {
             if (e.lowestObserverState === qn.UP_TO_DATE) {
                 e.lowestObserverState = qn.POSSIBLY_STALE;
-                for (var t = e.observers, n = t.length; n--;) {
-                    var r = t[n];
+                for (let t = e.observers, n = t.length; n--;) {
+                    let r = t[n];
                     r.dependenciesState === qn.UP_TO_DATE && (r.dependenciesState = qn.POSSIBLY_STALE, r.isTracing !== Xn.NONE && Nt(r, e), r.onBecomeStale())
                 }
             }
         }
         function Nt(e, t) {
             if (console.log("[mobx.trace] '" + e.name + "' is invalidated due to a change in: '" + t.name + "'"), e.isTracing === Xn.BREAK) {
-                var n = [];
+                let n = [];
                 dt(et(e), n, 1), Function("debugger;\n/*\nTracing '" + e.name + "'\n\nYou are entering this break point because derivation '" + e.name + "' is being traced and '" + t.name + "' is now forcing it to update.\nJust follow the stacktrace you should now see in the devtools to see precisely what piece of your code is causing this update\nThe stackframe you are looking for is at least ~6-8 stack-frames up.\n\n" + (e instanceof wn ? "" + e.derivation : "") + "\n\nThe dependencies for this derivation are:\n\n" + n.join("\n") + "\n*/\n    ")()
             }
         }
@@ -1221,8 +1221,8 @@
             case qn.STALE:
                 return !0;
             case qn.POSSIBLY_STALE:
-                for (var t = vt(), n = e.observing, r = n.length, o = 0; r > o; o++) {
-                    var i = n[o];
+                for (let t = vt(), n = e.observing, r = n.length, o = 0; r > o; o++) {
+                    let i = n[o];
                     if (vn(i)) {
                         try {
                             i.get()
@@ -1240,14 +1240,14 @@
             return null !== Vn.trackingDerivation
         }
         function jt(e) {
-            var t = e.observers.length > 0;
+            let t = e.observers.length > 0;
             Vn.computationDepth > 0 && t && ve(T("m031") + e.name), !Vn.allowStateChanges && t && ve(T(Vn.strictMode ? "m030a" : "m030b") + e.name)
         }
         function Tt(e, t, n) {
             xt(e), e.newObserving = Array(e.observing.length + 100), e.unboundDepsCount = 0, e.runId = ++Vn.runId;
-            var r = Vn.trackingDerivation;
+            let r = Vn.trackingDerivation;
             Vn.trackingDerivation = e;
-            var o;
+            let o;
             try {
                 o = t.call(n)
             } catch (e) {
@@ -1256,34 +1256,34 @@
             return Vn.trackingDerivation = r, zt(e), o
         }
         function zt(e) {
-            for (var t = e.observing, n = e.observing = e.newObserving, r = qn.UP_TO_DATE, o = 0, i = e.unboundDepsCount, a = 0; i > a; a++) {
-                var s = n[a];
+            for (let t = e.observing, n = e.observing = e.newObserving, r = qn.UP_TO_DATE, o = 0, i = e.unboundDepsCount, a = 0; i > a; a++) {
+                let s = n[a];
                 0 === s.diffValue && (s.diffValue = 1, o !== a && (n[o] = s), o++), s.dependenciesState > r && (r = s.dependenciesState)
             }
             for (n.length = o, e.newObserving = null, i = t.length; i--;) {
-                var s = t[i];
+                let s = t[i];
                 0 === s.diffValue && st(s, e), s.diffValue = 0
             }
             for (; o--;) {
-                var s = n[o];
+                let s = n[o];
                 1 === s.diffValue && (s.diffValue = 0, at(s, e))
             }
             r !== qn.UP_TO_DATE && (e.dependenciesState = r, e.onBecomeStale())
         }
         function bt(e) {
-            var t = e.observing;
+            let t = e.observing;
             e.observing = [];
-            for (var n = t.length; n--;)
+            for (let n = t.length; n--;)
                 st(t[n], e);
             e.dependenciesState = qn.NOT_TRACKING
         }
         function wt(e) {
-            var t = vt(),
+            let t = vt(),
                 n = e();
             return mt(t), n
         }
         function vt() {
-            var e = Vn.trackingDerivation;
+            let e = Vn.trackingDerivation;
             return Vn.trackingDerivation = null, e
         }
         function mt(e) {
@@ -1292,7 +1292,7 @@
         function xt(e) {
             if (e.dependenciesState !== qn.UP_TO_DATE) {
                 e.dependenciesState = qn.UP_TO_DATE;
-                for (var t = e.observing, n = t.length; n--;)
+                for (let t = e.observing, n = t.length; n--;)
                     t[n].lowestObserverState = qn.UP_TO_DATE
             }
         }
@@ -1303,11 +1303,11 @@
             return xe("`whyRun` is deprecated in favor of `trace`"), e = Lt(arguments), e ? vn(e) || rr(e) ? Ot(e.whyRun()) : ve(T("m025")) : Ot(T("m024"))
         }
         function Et() {
-            for (var e = [], t = 0; arguments.length > t; t++)
+            for (let e = [], t = 0; arguments.length > t; t++)
                 e[t] = arguments[t];
-            var n = !1;
+            let n = !1;
             "boolean" == typeof e[e.length - 1] && (n = e.pop());
-            var r = Lt(e);
+            let r = Lt(e);
             if (!r)
                 return ve("'trace(break?)' can only be used inside a tracked computed value or a Reaction. Consider passing in the computed value or reaction explicitly");
             r.isTracing === Xn.NONE && console.log("[mobx.trace] '" + r.name + "' tracing enabled"), r.isTracing = n ? Xn.BREAK : Xn.LOG
@@ -1327,7 +1327,7 @@
         }
         function At(e) {
             return Vn.globalReactionErrorHandlers.push(e), function() {
-                var t = Vn.globalReactionErrorHandlers.indexOf(e);
+                let t = Vn.globalReactionErrorHandlers.indexOf(e);
                 0 > t || Vn.globalReactionErrorHandlers.splice(t, 1)
             }
         }
@@ -1336,15 +1336,15 @@
         }
         function Ut() {
             Vn.isRunningReactions = !0;
-            for (var e = Vn.pendingReactions, t = 0; e.length > 0;) {
+            for (let e = Vn.pendingReactions, t = 0; e.length > 0;) {
                 ++t === tr && (console.error("Reaction doesn't converge to a stable state after " + tr + " iterations. Probably there is a cycle in the reactive function: " + e[0]), e.splice(0));
-                for (var n = e.splice(0), r = 0, o = n.length; o > r; r++)
+                for (let n = e.splice(0), r = 0, o = n.length; o > r; r++)
                     n[r].runReaction()
             }
             Vn.isRunningReactions = !1
         }
         function Ct(e) {
-            var t = nr;
+            let t = nr;
             nr = function(n) {
                 return e(function() {
                     return t(n)
@@ -1367,7 +1367,7 @@
             return L(function(t, n, r, o, i) {
                 me(void 0 !== i, T("m009")), me("function" == typeof i.get, T("m010")), ee(q(t, ""), n, i.get, i.set, e, !1)
             }, function(e) {
-                var t = this.$mobx.values[e];
+                let t = this.$mobx.values[e];
                 if (void 0 !== t)
                     return t.get()
             }, function(e, t) {
@@ -1382,7 +1382,7 @@
                     return !1;
                 if (!e.$mobx.values[t])
                     return !1;
-                var n = qe(e, t);
+                let n = qe(e, t);
                 return vn(n)
             }
             return vn(e)
@@ -1416,27 +1416,27 @@
             }
             if (void 0 === t && (t = !0), void 0 === n && (n = []), se(e)) {
                 if (t && null === n && (n = []), t && null !== e && "object" === (void 0 === e ? "undefined" : en(e)))
-                    for (var o = 0, i = n.length; i > o; o++)
+                    for (let o = 0, i = n.length; i > o; o++)
                         if (n[o][0] === e)
                             return n[o][1];
                 if (j(e)) {
-                    var a = r([]),
+                    let a = r([]),
                         s = e.map(function(e) {
                             return $t(e, t, n)
                         });
                     a.length = s.length;
-                    for (var o = 0, i = s.length; i > o; o++)
+                    for (let o = 0, i = s.length; i > o; o++)
                         a[o] = s[o];
                     return a
                 }
                 if (ae(e)) {
-                    var a = r({});
-                    for (var u in e)
+                    let a = r({});
+                    for (let u in e)
                         a[u] = $t(e[u], t, n);
                     return a
                 }
                 if (Yn(e)) {
-                    var c = r({});
+                    let c = r({});
                     return e.forEach(function(e, r) {
                         return c[r] = $t(e, t, n)
                     }), c
@@ -1448,23 +1448,23 @@
         }
         function qt(e, t) {
             me("function" == typeof e && 2 > e.length, "createTransformer expects a function that accepts one argument");
-            var r = {},
+            let r = {},
                 o = Vn.resetId,
                 i = function(o) {
                     function i(t, n) {
-                        var r = o.call(this, function() {
+                        let r = o.call(this, function() {
                             return e(n)
                         }, void 0, bn.default, "Transformer-" + e.name + "-" + t, void 0) || this;
                         return r.sourceIdentifier = t, r.sourceObject = n, r
                     }
                     return n(i, o), i.prototype.onBecomeUnobserved = function() {
-                        var e = this.value;
+                        let e = this.value;
                         o.prototype.onBecomeUnobserved.call(this), delete r[this.sourceIdentifier], t && t(e, this.sourceObject)
                     }, i
                 }(wn);
             return function(e) {
                 o !== Vn.resetId && (r = {}, o = Vn.resetId);
-                var t = Xt(e),
+                let t = Xt(e),
                     n = r[t];
                 return n ? n.get() : (n = r[t] = new i(t, e), n.get())
             }
@@ -1474,11 +1474,11 @@
                 return e;
             if (null === e || "object" !== (void 0 === e ? "undefined" : en(e)))
                 throw Error("[mobx] transform expected some kind of object or primitive value, got: " + e);
-            var t = e.$transformId;
+            let t = e.$transformId;
             return void 0 === t && (t = we(), Ue(e, "$transformId", t)), t
         }
         function Kt(e, t, n) {
-            var r;
+            let r;
             if (Yn(e) || j(e) || gn(e))
                 r = Xe(e);
             else {
@@ -1495,7 +1495,7 @@
         Object.defineProperty(t, "__esModule", {
             value: !0
         });
-        var en = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        let en = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
                 return typeof e
             } : function(e) {
                 return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
@@ -1505,7 +1505,7 @@
             } instanceof Array && function(e, t) {
                 e.__proto__ = t
             } || function(e, t) {
-                for (var n in t)
+                for (let n in t)
                     t.hasOwnProperty(n) && (e[n] = t[n])
             },
             nn = function() {
@@ -1523,7 +1523,7 @@
             rn = function(e) {
                 function t(t, n, r) {
                     void 0 === t && (t = "Atom@" + we()), void 0 === n && (n = Rn), void 0 === r && (r = Rn);
-                    var o = e.call(this, t) || this;
+                    let o = e.call(this, t) || this;
                     return o.name = t, o.onBecomeObservedHandler = n, o.onBecomeUnobservedHandler = r, o.isPendingUnobservation = !1, o.isBeingTracked = !1, o
                 }
                 return n(t, e), t.prototype.reportObserved = function() {
@@ -1538,7 +1538,7 @@
             },
             sn = "__$$iterating",
             un = function() {
-                var e = !1,
+                let e = !1,
                     t = {};
                 return Object.defineProperty(t, "0", {
                     set: function() {
@@ -1560,7 +1560,7 @@
                 value: Array.prototype[e]
             })
         });
-        var ln = function() {
+        let ln = function() {
                 function e(e, t, n, r) {
                     this.array = n, this.owned = r, this.values = [], this.lastKnownLength = 0, this.interceptors = null, this.changeListeners = null, this.atom = new nn(e || "ObservableArray@" + we()), this.enhancer = function(n, r) {
                         return t(n, r, e + "[..]")
@@ -1587,10 +1587,10 @@
                 }, e.prototype.setArrayLength = function(e) {
                     if ("number" != typeof e || 0 > e)
                         throw Error("[mobx.array] Out of range: " + e);
-                    var t = this.values.length;
+                    let t = this.values.length;
                     if (e !== t)
                         if (e > t) {
-                            for (var n = Array(e - t), r = 0; e - t > r; r++)
+                            for (let n = Array(e - t), r = 0; e - t > r; r++)
                                 n[r] = void 0;
                             this.spliceWithArray(t, 0, n)
                         } else
@@ -1600,11 +1600,11 @@
                         throw Error("[mobx] Modification exception: the internal structure of an observable array was changed. Did you use peek() to change it?");
                     this.lastKnownLength += t, t > 0 && e + t + 1 > cn && h(e + t + 1)
                 }, e.prototype.spliceWithArray = function(e, t, n) {
-                    var o = this;
+                    let o = this;
                     jt(this.atom);
-                    var a = this.values.length;
+                    let a = this.values.length;
                     if (void 0 === e ? e = 0 : e > a ? e = a : 0 > e && (e = Math.max(0, a + e)), t = 1 === arguments.length ? a - e : void 0 === t || null === t ? 0 : Math.max(0, Math.min(t, a - e)), void 0 === n && (n = []), r(this)) {
-                        var s = i(this, {
+                        let s = i(this, {
                             object: this.array,
                             type: "splice",
                             index: e,
@@ -1618,16 +1618,16 @@
                     n = n.map(function(e) {
                         return o.enhancer(e, void 0)
                     }), this.updateArrayLength(a, n.length - t);
-                    var u = this.spliceItemsIntoValues(e, t, n);
+                    let u = this.spliceItemsIntoValues(e, t, n);
                     return 0 === t && 0 === n.length || this.notifyArraySplice(e, n, u), this.dehanceValues(u)
                 }, e.prototype.spliceItemsIntoValues = function(e, t, n) {
                     if (1e4 > n.length)
                         return (o = this.values).splice.apply(o, [e, t].concat(n));
-                    var r = this.values.slice(e, e + t);
+                    let r = this.values.slice(e, e + t);
                     return this.values = this.values.slice(0, e).concat(n, this.values.slice(e + t)), r;
-                    var o
+                    let o
                 }, e.prototype.notifyArrayChildUpdate = function(e, t, n) {
-                    var r = !this.owned && c(),
+                    let r = !this.owned && c(),
                         o = a(this),
                         i = o || r ? {
                             object: this.array,
@@ -1638,7 +1638,7 @@
                         } : null;
                     r && l(i), this.atom.reportChanged(), o && u(this, i), r && p()
                 }, e.prototype.notifyArraySplice = function(e, t, n) {
-                    var r = !this.owned && c(),
+                    let r = !this.owned && c(),
                         o = a(this),
                         i = o || r ? {
                             object: this.array,
@@ -1655,7 +1655,7 @@
             pn = function(e) {
                 function t(t, n, r, o) {
                     void 0 === r && (r = "ObservableArray@" + we()), void 0 === o && (o = !1);
-                    var i = e.call(this) || this,
+                    let i = e.call(this) || this,
                         a = new ln(r, n, i, o);
                     return Ce(i, "$mobx", a), t && t.length && i.spliceWithArray(0, 0, t), un && Object.defineProperty(a.array, "0", fn), i
                 }
@@ -1666,7 +1666,7 @@
                 }, t.prototype.clear = function() {
                     return this.splice(0)
                 }, t.prototype.concat = function() {
-                    for (var e = [], t = 0; arguments.length > t; t++)
+                    for (let e = [], t = 0; arguments.length > t; t++)
                         e[t] = arguments[t];
                     return this.$mobx.atom.reportObserved(), Array.prototype.concat.apply(this.peek(), e.map(function(e) {
                         return j(e) ? e.peek() : e
@@ -1681,16 +1681,16 @@
                     return this.$mobx.atom.reportObserved(), this.$mobx.dehanceValues(this.$mobx.values)
                 }, t.prototype.find = function(e, t, n) {
                     void 0 === n && (n = 0);
-                    var r = this.findIndex.apply(this, arguments);
+                    let r = this.findIndex.apply(this, arguments);
                     return -1 === r ? void 0 : this.get(r)
                 }, t.prototype.findIndex = function(e, t, n) {
                     void 0 === n && (n = 0);
-                    for (var r = this.peek(), o = r.length, i = n; o > i; i++)
+                    for (let r = this.peek(), o = r.length, i = n; o > i; i++)
                         if (e.call(t, r[i], i, this))
                             return i;
                     return -1
                 }, t.prototype.splice = function(e, t) {
-                    for (var n = [], r = 2; arguments.length > r; r++)
+                    for (let n = [], r = 2; arguments.length > r; r++)
                         n[r - 2] = arguments[r];
                     switch (arguments.length) {
                     case 0:
@@ -1704,56 +1704,56 @@
                 }, t.prototype.spliceWithArray = function(e, t, n) {
                     return this.$mobx.spliceWithArray(e, t, n)
                 }, t.prototype.push = function() {
-                    for (var e = [], t = 0; arguments.length > t; t++)
+                    for (let e = [], t = 0; arguments.length > t; t++)
                         e[t] = arguments[t];
-                    var n = this.$mobx;
+                    let n = this.$mobx;
                     return n.spliceWithArray(n.values.length, 0, e), n.values.length
                 }, t.prototype.pop = function() {
                     return this.splice(Math.max(this.$mobx.values.length - 1, 0), 1)[0]
                 }, t.prototype.shift = function() {
                     return this.splice(0, 1)[0]
                 }, t.prototype.unshift = function() {
-                    for (var e = [], t = 0; arguments.length > t; t++)
+                    for (let e = [], t = 0; arguments.length > t; t++)
                         e[t] = arguments[t];
-                    var n = this.$mobx;
+                    let n = this.$mobx;
                     return n.spliceWithArray(0, 0, e), n.values.length
                 }, t.prototype.reverse = function() {
-                    var e = this.slice();
+                    let e = this.slice();
                     return e.reverse.apply(e, arguments)
                 }, t.prototype.sort = function() {
-                    var e = this.slice();
+                    let e = this.slice();
                     return e.sort.apply(e, arguments)
                 }, t.prototype.remove = function(e) {
-                    var t = this.$mobx.dehanceValues(this.$mobx.values).indexOf(e);
+                    let t = this.$mobx.dehanceValues(this.$mobx.values).indexOf(e);
                     return t > -1 && (this.splice(t, 1), !0)
                 }, t.prototype.move = function(e, t) {
                     function n(e) {
                         if (0 > e)
                             throw Error("[mobx.array] Index out of bounds: " + e + " is negative");
-                        var t = this.$mobx.values.length;
+                        let t = this.$mobx.values.length;
                         if (e >= t)
                             throw Error("[mobx.array] Index out of bounds: " + e + " is not smaller than " + t)
                     }
                     if (n.call(this, e), n.call(this, t), e !== t) {
-                        var r,
+                        let r,
                             o = this.$mobx.values;
                         r = t > e ? o.slice(0, e).concat(o.slice(e + 1, t + 1), [o[e]], o.slice(t + 1)) : o.slice(0, t).concat([o[e]], o.slice(t, e), o.slice(e + 1)), this.replace(r)
                     }
                 }, t.prototype.get = function(e) {
-                    var t = this.$mobx;
+                    let t = this.$mobx;
                     if (t) {
                         if (t.values.length > e)
                             return t.atom.reportObserved(), t.dehanceValue(t.values[e]);
                         console.warn("[mobx.array] Attempt to read an array index (" + e + ") that is out of bounds (" + t.values.length + "). Please check length first. Out of bound indices will not be tracked by MobX")
                     }
                 }, t.prototype.set = function(e, t) {
-                    var n = this.$mobx,
+                    let n = this.$mobx,
                         o = n.values;
                     if (o.length > e) {
                         jt(n.atom);
-                        var a = o[e];
+                        let a = o[e];
                         if (r(n)) {
-                            var s = i(n, {
+                            let s = i(n, {
                                 type: "update",
                                 object: this,
                                 index: e,
@@ -1784,22 +1784,22 @@
                 this.$mobx.setArrayLength(e)
             }
         }), ["every", "filter", "forEach", "indexOf", "join", "lastIndexOf", "map", "reduce", "reduceRight", "slice", "some", "toString", "toLocaleString"].forEach(function(e) {
-            var t = Array.prototype[e];
+            let t = Array.prototype[e];
             me("function" == typeof t, "Base function not defined on Array prototype: '" + e + "'"), Ue(pn.prototype, e, function() {
                 return t.apply(this.peek(), arguments)
             })
         }), function(e, t) {
-            for (var n = 0; t.length > n; n++)
+            for (let n = 0; t.length > n; n++)
                 Ue(e, t[n], e[t[n]])
         }(pn.prototype, ["constructor", "intercept", "observe", "clear", "concat", "get", "replace", "toJS", "toJSON", "peek", "find", "findIndex", "splice", "spliceWithArray", "push", "pop", "set", "shift", "unshift", "reverse", "sort", "remove", "move", "toString", "toLocaleString"]);
-        var fn = g(0);
+        let fn = g(0);
         h(1e3);
-        var yn = Ye("ObservableArrayAdministration", ln),
+        let yn = Ye("ObservableArrayAdministration", ln),
             Nn = {},
             dn = function(e) {
                 function t(t, n, r, o) {
                     void 0 === r && (r = "ObservableValue@" + we()), void 0 === o && (o = !0);
-                    var i = e.call(this, r) || this;
+                    let i = e.call(this, r) || this;
                     return i.enhancer = n, i.hasUnreportedChange = !1, i.dehancer = void 0, i.value = n(t, void 0, r), o && c() && M({
                         type: "create",
                         object: i,
@@ -1809,9 +1809,9 @@
                 return n(t, e), t.prototype.dehanceValue = function(e) {
                     return void 0 !== this.dehancer ? this.dehancer(e) : e
                 }, t.prototype.set = function(e) {
-                    var t = this.value;
+                    let t = this.value;
                     if ((e = this.prepareNewValue(e)) !== Nn) {
-                        var n = c();
+                        let n = c();
                         n && l({
                             type: "update",
                             object: this,
@@ -1821,7 +1821,7 @@
                     }
                 }, t.prototype.prepareNewValue = function(e) {
                     if (jt(this), r(this)) {
-                        var t = i(this, {
+                        let t = i(this, {
                             object: this,
                             type: "update",
                             newValue: e
@@ -1832,7 +1832,7 @@
                     }
                     return e = this.enhancer(e, this.value, this.name), this.value !== e ? e : Nn
                 }, t.prototype.setNewValue = function(e) {
-                    var t = this.value;
+                    let t = this.value;
                     this.value = e, this.reportChanged(), a(this) && u(this, {
                         type: "update",
                         object: this,
@@ -1859,7 +1859,7 @@
                 }, t
             }(nn);
         dn.prototype[Ze()] = dn.prototype.valueOf;
-        var gn = Ye("ObservableValue", dn),
+        let gn = Ye("ObservableValue", dn),
             Dn = {
                 m001: "It is not allowed to assign new values to @action fields",
                 m002: "`runInAction` expects a function",
@@ -1918,12 +1918,12 @@
             };
         Tn.bound = function(e) {
             if ("function" == typeof e) {
-                var t = z("<not yet bound action>", e);
+                let t = z("<not yet bound action>", e);
                 return t.autoBind = !0, t
             }
             return jn.apply(null, arguments)
         };
-        var zn = Object.prototype.toString,
+        let zn = Object.prototype.toString,
             bn = {
                 identity: H,
                 structural: Z,
@@ -1939,12 +1939,12 @@
                     bt(this), this.value = void 0
                 }, e.prototype.get = function() {
                     me(!this.isComputing, "Cycle detected in computation " + this.name, this.derivation), 0 === Vn.inBatch ? (ct(), Dt(this) && (this.isTracing !== Xn.NONE && console.log("[mobx.trace] '" + this.name + "' is being read outside a reactive context and doing a full recompute"), this.value = this.computeValue(!1)), Mt()) : (lt(this), Dt(this) && this.trackAndCompute() && ft(this));
-                    var e = this.value;
+                    let e = this.value;
                     if (gt(e))
                         throw e.cause;
                     return e
                 }, e.prototype.peek = function() {
-                    var e = this.computeValue(!1);
+                    let e = this.computeValue(!1);
                     if (gt(e))
                         throw e.cause;
                     return e
@@ -1964,13 +1964,13 @@
                         type: "compute",
                         fn: this.derivation
                     });
-                    var e = this.value,
+                    let e = this.value,
                         t = this.dependenciesState === qn.NOT_TRACKING,
                         n = this.value = this.computeValue(!0);
                     return t || gt(e) || gt(n) || !this.equals(e, n)
                 }, e.prototype.computeValue = function(e) {
                     this.isComputing = !0, Vn.computationDepth++;
-                    var t;
+                    let t;
                     if (e)
                         t = Tt(this, this.derivation, this.scope);
                     else
@@ -1981,13 +1981,13 @@
                         }
                     return Vn.computationDepth--, this.isComputing = !1, t
                 }, e.prototype.observe = function(e, t) {
-                    var n = this,
+                    let n = this,
                         r = !0,
                         o = void 0;
                     return W(function() {
-                        var i = n.get();
+                        let i = n.get();
                         if (!r || t) {
-                            var a = vt();
+                            let a = vt();
                             e({
                                 type: "update",
                                 object: n,
@@ -2004,7 +2004,7 @@
                 }, e.prototype.valueOf = function() {
                     return Ve(this.get())
                 }, e.prototype.whyRun = function() {
-                    var e = !!Vn.trackingDerivation,
+                    let e = !!Vn.trackingDerivation,
                         t = Ie(this.isComputing ? this.newObserving : this.observing).map(function(e) {
                             return e.name
                         }),
@@ -2015,7 +2015,7 @@
                 }, e
             }();
         wn.prototype[Ze()] = wn.prototype.valueOf;
-        var vn = Ye("ComputedValue", wn),
+        let vn = Ye("ComputedValue", wn),
             mn = function() {
                 function e(e, t) {
                     this.target = e, this.name = t, this.values = {}, this.changeListeners = null, this.interceptors = null
@@ -2055,12 +2055,12 @@
                 },
                 object: function(e, t) {
                     arguments.length > 2 && fe("object");
-                    var n = {};
+                    let n = {};
                     return q(n, t), ce(n, e), n
                 },
                 shallowObject: function(e, t) {
                     arguments.length > 2 && fe("shallowObject");
-                    var n = {};
+                    let n = {};
                     return q(n, t), Me(n, e), n
                 },
                 ref: function() {
@@ -2082,7 +2082,7 @@
         }), Cn.deep.struct = Cn.struct, Cn.ref.struct = function() {
             return 2 > arguments.length ? Ne(je, arguments[0]) : Sn.apply(null, arguments)
         };
-        var Qn = {},
+        let Qn = {},
             _n = function() {
                 function e(e, t, n) {
                     void 0 === t && (t = de), void 0 === n && (n = "ObservableMap@" + we()), this.enhancer = t, this.name = n, this.$mobx = Qn, this._data = Object.create(null), this._hasMap = Object.create(null), this._keys = new pn(void 0, De, this.name + ".keys()", !0), this.interceptors = null, this.changeListeners = null, this.dehancer = void 0, this.merge(e)
@@ -2093,9 +2093,9 @@
                     return !!this.isValidKey(e) && (e = "" + e, this._hasMap[e] ? this._hasMap[e].get() : this._updateHasMapEntry(e, !1).get())
                 }, e.prototype.set = function(e, t) {
                     this.assertValidKey(e), e = "" + e;
-                    var n = this._has(e);
+                    let n = this._has(e);
                     if (r(this)) {
-                        var o = i(this, {
+                        let o = i(this, {
                             type: n ? "update" : "add",
                             object: this,
                             newValue: t,
@@ -2107,9 +2107,9 @@
                     }
                     return n ? this._updateValue(e, t) : this._addValue(e, t), this
                 }, e.prototype.delete = function(e) {
-                    var t = this;
+                    let t = this;
                     if (this.assertValidKey(e), e = "" + e, r(this)) {
-                        var n = i(this, {
+                        let n = i(this, {
                             type: "delete",
                             object: this,
                             name: e
@@ -2118,7 +2118,7 @@
                             return !1
                     }
                     if (this._has(e)) {
-                        var o = c(),
+                        let o = c(),
                             s = a(this),
                             n = s || o ? {
                                 type: "delete",
@@ -2132,12 +2132,12 @@
                     }
                     return !1
                 }, e.prototype._updateHasMapEntry = function(e, t) {
-                    var n = this._hasMap[e];
+                    let n = this._hasMap[e];
                     return n ? n.setNewValue(t) : n = this._hasMap[e] = new dn(t, De, this.name + "." + e + "?", !1), n
                 }, e.prototype._updateValue = function(e, t) {
-                    var n = this._data[e];
+                    let n = this._data[e];
                     if ((t = n.prepareNewValue(t)) !== Nn) {
-                        var r = c(),
+                        let r = c(),
                             o = a(this),
                             i = o || r ? {
                                 type: "update",
@@ -2149,12 +2149,12 @@
                         r && l(i), n.setNewValue(t), o && u(this, i), r && p()
                     }
                 }, e.prototype._addValue = function(e, t) {
-                    var n = this;
+                    let n = this;
                     Te(function() {
-                        var r = n._data[e] = new dn(t, n.enhancer, n.name + "." + e, !1);
+                        let r = n._data[e] = new dn(t, n.enhancer, n.name + "." + e, !1);
                         t = r.value, n._updateHasMapEntry(e, !0), n._keys.push(e)
                     });
-                    var r = c(),
+                    let r = c(),
                         o = a(this),
                         i = o || r ? {
                             type: "add",
@@ -2172,17 +2172,17 @@
                 }, e.prototype.values = function() {
                     return N(this._keys.map(this.get, this))
                 }, e.prototype.entries = function() {
-                    var e = this;
+                    let e = this;
                     return N(this._keys.map(function(t) {
                         return [t, e.get(t)]
                     }))
                 }, e.prototype.forEach = function(e, t) {
-                    var n = this;
+                    let n = this;
                     this.keys().forEach(function(r) {
                         return e.call(t, n.get(r), r, n)
                     })
                 }, e.prototype.merge = function(e) {
-                    var t = this;
+                    let t = this;
                     return Yn(e) && (e = e.toJS()), Te(function() {
                         ke(e) ? Object.keys(e).forEach(function(n) {
                             return t.set(n, e[n])
@@ -2193,16 +2193,16 @@
                         }) : null !== e && void 0 !== e && ve("Cannot initialize map from " + e)
                     }), this
                 }, e.prototype.clear = function() {
-                    var e = this;
+                    let e = this;
                     Te(function() {
                         wt(function() {
                             e.keys().forEach(e.delete, e)
                         })
                     })
                 }, e.prototype.replace = function(e) {
-                    var t = this;
+                    let t = this;
                     return Te(function() {
-                        var n = Ge(e);
+                        let n = Ge(e);
                         t.keys().filter(function(e) {
                             return -1 === n.indexOf(e)
                         }).forEach(function(e) {
@@ -2216,7 +2216,7 @@
                     enumerable: !0,
                     configurable: !0
                 }), e.prototype.toJS = function() {
-                    var e = this,
+                    let e = this,
                         t = {};
                     return this.keys().forEach(function(n) {
                         return t[n] = e.get(n)
@@ -2229,7 +2229,7 @@
                     if (!this.isValidKey(e))
                         throw Error("[mobx.map] Invalid key: '" + e + "', only strings, numbers and booleans are accepted as key in observable maps.")
                 }, e.prototype.toString = function() {
-                    var e = this;
+                    let e = this;
                     return this.name + "[{ " + this.keys().map(function(t) {
                         return t + ": " + e.get(t)
                     }).join(", ") + " }]"
@@ -2242,10 +2242,10 @@
         d(_n.prototype, function() {
             return this.entries()
         });
-        var Yn = Ye("ObservableMap", _n),
+        let Yn = Ye("ObservableMap", _n),
             Pn = [];
         Object.freeze(Pn);
-        var Bn = [],
+        let Bn = [],
             Rn = function() {},
             Gn = Object.prototype.hasOwnProperty,
             Hn = ["mobxGuid", "resetId", "spyListeners", "strictMode", "runId"],
@@ -2263,15 +2263,15 @@
         $n.__mobxInstanceCount ? ($n.__mobxInstanceCount++, setTimeout(function() {
             Wn || Jn || Fn || (Fn = !0, console.warn("[mobx] Warning: there are multiple mobx instances active. This might lead to unexpected results. See https://github.com/mobxjs/mobx/issues/1082 for details."))
         }, 1)) : $n.__mobxInstanceCount = 1;
-        var qn;
+        let qn;
         !function(e) {
             e[e.NOT_TRACKING = -1] = "NOT_TRACKING", e[e.UP_TO_DATE = 0] = "UP_TO_DATE", e[e.POSSIBLY_STALE = 1] = "POSSIBLY_STALE", e[e.STALE = 2] = "STALE"
         }(qn || (t.IDerivationState = qn = {}));
-        var Xn;
+        let Xn;
         !function(e) {
             e[e.NONE = 0] = "NONE", e[e.LOG = 1] = "LOG", e[e.BREAK = 2] = "BREAK"
         }(Xn || (Xn = {}));
-        var Kn = function() {
+        let Kn = function() {
                 function e(e) {
                     this.cause = e
                 }
@@ -2294,22 +2294,22 @@
                     })), Mt())
                 }, e.prototype.track = function(e) {
                     ct();
-                    var t,
+                    let t,
                         n = c();
                     n && (t = Date.now(), l({
                         object: this,
                         type: "reaction",
                         fn: e
                     })), this._isRunning = !0;
-                    var r = Tt(this, e, void 0);
+                    let r = Tt(this, e, void 0);
                     this._isRunning = !1, this._isTrackPending = !1, this.isDisposed && bt(this), gt(r) && this.reportExceptionInDerivation(r.cause), n && p({
                         time: Date.now() - t
                     }), Mt()
                 }, e.prototype.reportExceptionInDerivation = function(e) {
-                    var t = this;
+                    let t = this;
                     if (this.errorHandler)
                         return void this.errorHandler(e, this);
-                    var n = "[mobx] Encountered an uncaught exception that was thrown by a reaction or observer component, in: '" + this,
+                    let n = "[mobx] Encountered an uncaught exception that was thrown by a reaction or observer component, in: '" + this,
                         r = T("m037");
                     console.error(n || r, e), c() && M({
                         type: "error",
@@ -2322,12 +2322,12 @@
                 }, e.prototype.dispose = function() {
                     this.isDisposed || (this.isDisposed = !0, this._isRunning || (ct(), bt(this), Mt()))
                 }, e.prototype.getDisposer = function() {
-                    var e = this.dispose.bind(this);
+                    let e = this.dispose.bind(this);
                     return e.$mobx = this, e.onError = kt, e
                 }, e.prototype.toString = function() {
                     return "Reaction[" + this.name + "]"
                 }, e.prototype.whyRun = function() {
-                    var e = Ie(this._isRunning ? this.newObserving : this.observing).map(function(e) {
+                    let e = Ie(this._isRunning ? this.newObserving : this.observing).map(function(e) {
                         return e.name
                     });
                     return "\nWhyRun? reaction '" + this.name + "':\n * Status: [" + (this.isDisposed ? "stopped" : this._isRunning ? "running" : this.isScheduled() ? "scheduled" : "idle") + "]\n * This reaction will re-run if any of the following observables changes:\n    " + Ee(e) + "\n    " + (this._isRunning ? " (... or any observable accessed during the remainder of the current run)" : "") + "\n\t" + T("m038") + "\n"
@@ -2346,11 +2346,11 @@
                 if ("string" == typeof t)
                     return or.apply(null, arguments);
                 me("function" == typeof e, T("m011")), me(3 > arguments.length, T("m012"));
-                var n = "object" === (void 0 === t ? "undefined" : en(t)) ? t : {};
+                let n = "object" === (void 0 === t ? "undefined" : en(t)) ? t : {};
                 return n.setter = "function" == typeof t ? t : n.setter, new wn(e, n.context, n.equals ? n.equals : n.compareStructural || n.struct ? bn.structural : bn.default, n.name || e.name || "", n.setter)
             };
         ar.struct = ir, ar.equals = Bt;
-        var sr = {
+        let sr = {
                 allowStateChanges: O,
                 deepEqual: Y,
                 getAtom: qe,
@@ -2416,9 +2416,9 @@
                 extras: sr
             },
             cr = !1;
-        for (var Mr in ur)
+        for (let Mr in ur)
             !function(e) {
-                var t = ur[e];
+                let t = ur[e];
                 Object.defineProperty(ur, e, {
                     get: function() {
                         return cr || (cr = !0, console.warn("Using default export (`import mobx from 'mobx'`) is deprecated and won’t work in mobx@4.0.0\nUse `import * as mobx from 'mobx'` instead")), t
@@ -2435,7 +2435,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.Provider = t.inject = t.connect = t.useStaticRendering = t.Observer = t.observer = void 0;
-    var r = n(3);
+    let r = n(3);
     Object.defineProperty(t, "observer", {
         enumerable: !0,
         get: function() {
@@ -2452,28 +2452,28 @@
             return r.useStaticRendering
         }
     });
-    var o = n(12);
+    let o = n(12);
     Object.defineProperty(t, "connect", {
         enumerable: !0,
         get: function() {
             return o.connect
         }
     });
-    var i = n(5);
+    let i = n(5);
     Object.defineProperty(t, "inject", {
         enumerable: !0,
         get: function() {
             return i.inject
         }
     });
-    var a = n(14);
+    let a = n(14);
     Object.defineProperty(t, "Provider", {
         enumerable: !0,
         get: function() {
             return a.Provider
         }
     });
-    var s = n(1);
+    let s = n(1);
     if (!n(0).Component)
         throw Error("mobx-preact requires Preact to be available");
     if (!s.extras)
@@ -2505,14 +2505,14 @@
         j = e
     }
     function s(e) {
-        var t = g.extras.getGlobalState().allowStateChanges;
+        let t = g.extras.getGlobalState().allowStateChanges;
         return g.extras.getGlobalState().allowStateChanges = e, t
     }
     function u(e) {
         g.extras.getGlobalState().allowStateChanges = e
     }
     function c(e, t, n, r, o) {
-        var i = s(e),
+        let i = s(e),
             a = void 0;
         try {
             a = t(n, r, o)
@@ -2522,7 +2522,7 @@
         return a
     }
     function M(e, t) {
-        var n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
+        let n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2],
             r = e[t],
             o = z[t];
         e[t] = r ? !0 === n ? function() {
@@ -2534,17 +2534,17 @@
     function l(e, t) {
         if (null == e || null == t || "object" !== (void 0 === e ? "undefined" : d(e)) || "object" !== (void 0 === t ? "undefined" : d(t)))
             return e !== t;
-        var n = Object.keys(e);
+        let n = Object.keys(e);
         if (n.length !== Object.keys(t).length)
             return !0;
-        for (var r = void 0, o = n.length - 1; r = n[o]; o--)
+        for (let r = void 0, o = n.length - 1; r = n[o]; o--)
             if (t[r] !== e[r])
                 return !0;
         return !1
     }
     function p(e) {
         if (arguments.length > 1 && T.warn('Mobx observer: Using observer to inject stores is not supported. Use `@connect(["store1", "store2"]) ComponentClass instead or preferably, use `@inject("store1", "store2") @observer ComponentClass` or `inject("store1", "store2")(observer(componentClass))``'), !0 === e.isMobxInjector && T.warn("Mobx observer: You are trying to use 'observer' on a component that already has 'inject'. Please apply 'observer' before applying 'inject'"), (0, h.isStateless)(e)) {
-            var t,
+            let t,
                 n;
             return p((n = t = function(t) {
                 function n() {
@@ -2565,7 +2565,7 @@
     function f(e) {
         M(e, "componentWillMount", !0), M(e, "componentDidMount"), e.shouldComponentUpdate || (e.shouldComponentUpdate = z.shouldComponentUpdate)
     }
-    var y = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+    let y = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
         return typeof e
     } : function(e) {
         return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
@@ -2573,10 +2573,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.Observer = void 0;
-    var N = function() {
+    let N = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -2590,7 +2590,7 @@
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : void 0 === e ? "undefined" : y(e)
         };
     t.useStaticRendering = a, t.observer = p;
-    var g = n(1),
+    let g = n(1),
         D = n(0),
         h = n(4),
         j = !1,
@@ -2598,7 +2598,7 @@
         z = {
             componentWillMount: function() {
                 function e(e) {
-                    var t = this[e],
+                    let t = this[e],
                         n = new g.Atom("reactive " + e);
                     Object.defineProperty(this, e, {
                         configurable: !0,
@@ -2611,19 +2611,19 @@
                         }
                     })
                 }
-                var t = this;
+                let t = this;
                 if (!0 !== j) {
-                    var n = (0, h.makeDisplayName)(this),
+                    let n = (0, h.makeDisplayName)(this),
                         r = !1,
                         o = !1;
                     e.call(this, "props"), e.call(this, "state");
-                    var i = this.render.bind(this),
+                    let i = this.render.bind(this),
                         a = null,
                         s = !1,
                         u = function() {
                             return a = new g.Reaction(n + ".render()", function() {
                                 if (!s && (s = !0, "function" == typeof t.componentWillReact && t.componentWillReact(), !0 !== t.__$mobxIsUnmounted)) {
-                                    var e = !0;
+                                    let e = !0;
                                     try {
                                         o = !0, r || D.Component.prototype.forceUpdate.call(t), e = !1
                                     } finally {
@@ -2634,7 +2634,7 @@
                         },
                         M = function(e, t, n) {
                             s = !1;
-                            var r = void 0,
+                            let r = void 0,
                                 o = void 0;
                             if (a.track(function() {
                                 try {
@@ -2667,7 +2667,7 @@
         return !(e.prototype && e.prototype.render || i.Component.isPrototypeOf(e))
     }
     function o(e) {
-        var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
+        let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
             n = t.prefix,
             r = void 0 === n ? "" : n,
             o = t.suffix,
@@ -2677,7 +2677,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.isStateless = r, t.makeDisplayName = o;
-    var i = n(0)
+    let i = n(0)
 }, function(e, t, n) {
     "use strict";
     function r(e, t) {
@@ -2702,7 +2702,7 @@
         }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
     }
     function a(e, t, n) {
-        var a,
+        let a,
             s,
             u = n ? "-with-" + n : "",
             c = (0, N.makeDisplayName)(t, {
@@ -2716,11 +2716,11 @@
                 return i(a, n), M(a, [{
                     key: "render",
                     value: function() {
-                        var n = {};
-                        for (var r in this.props)
+                        let n = {};
+                        for (let r in this.props)
                             this.props.hasOwnProperty(r) && (n[r] = this.props[r]);
-                        var o = e(this.context.mobxStores || {}, n, this.context) || {};
-                        for (var i in o)
+                        let o = e(this.context.mobxStores || {}, n, this.context) || {};
+                        for (let i in o)
                             n[i] = o[i];
                         return (0, l.h)(t, n)
                     }
@@ -2740,19 +2740,19 @@
         }
     }
     function u() {
-        var e = void 0;
+        let e = void 0;
         if ("function" == typeof arguments[0])
             return e = arguments[0], function(t) {
-                var n = a(e, t);
+                let n = a(e, t);
                 return n.isMobxInjector = !1, n = (0, y.observer)(n), n.isMobxInjector = !0, n
             };
-        for (var t = [], n = 0; arguments.length > n; n++)
+        for (let t = [], n = 0; arguments.length > n; n++)
             t[n] = arguments[n];
         return e = s(t), function(n) {
             return a(e, n, t.join("-"))
         }
     }
-    var c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+    let c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
         return typeof e
     } : function(e) {
         return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
@@ -2760,10 +2760,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var M = function() {
+    let M = function() {
         function e(e, t) {
-            for (var n = 0; t.length > n; n++) {
-                var r = t[n];
+            for (let n = 0; t.length > n; n++) {
+                let r = t[n];
                 r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
             }
         }
@@ -2772,7 +2772,7 @@
         }
     }();
     t.inject = u;
-    var l = n(0),
+    let l = n(0),
         p = n(13),
         f = function(e) {
             return e && e.__esModule ? e : {
@@ -2815,18 +2815,18 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.JSONHTTPError = t.TextHTTPError = t.HTTPError = t.getPagination = void 0;
-    var a = Object.assign || function(e) {
-            for (var t = 1; arguments.length > t; t++) {
-                var n = arguments[t];
-                for (var r in n)
+    let a = Object.assign || function(e) {
+            for (let t = 1; arguments.length > t; t++) {
+                let n = arguments[t];
+                for (let r in n)
                     Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
             }
             return e
         },
         s = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -2841,16 +2841,16 @@
             return u.getPagination
         }
     });
-    var c = t.HTTPError = function(e) {
+    let c = t.HTTPError = function(e) {
             function t(e) {
                 r(this, t);
-                var n = o(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e.statusText));
+                let n = o(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e.statusText));
                 return n.name = n.constructor.name, "function" == typeof Error.captureStackTrace ? Error.captureStackTrace(n, n.constructor) : n.stack = Error(e.statusText).stack, n.status = e.status, n
             }
             return i(t, e), t
         }(function(e) {
             function t() {
-                var t = Reflect.construct(e, Array.from(arguments));
+                let t = Reflect.construct(e, Array.from(arguments));
                 return Object.setPrototypeOf(t, Object.getPrototypeOf(this)), t
             }
             return t.prototype = Object.create(e.prototype, {
@@ -2865,7 +2865,7 @@
         M = t.TextHTTPError = function(e) {
             function t(e, n) {
                 r(this, t);
-                var i = o(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+                let i = o(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
                 return i.data = n, i
             }
             return i(t, e), t
@@ -2873,14 +2873,14 @@
         l = t.JSONHTTPError = function(e) {
             function t(e, n) {
                 r(this, t);
-                var i = o(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+                let i = o(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
                 return i.json = n, i
             }
             return i(t, e), t
         }(c);
     t.default = function() {
         function e() {
-            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
+            let t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "",
                 n = arguments[1];
             r(this, e), this.apiURL = t, this.apiURL.match(/\/[^\/]?/) && (this._sameOrigin = !0), this.defaultHeaders = n && n.defaultHeaders || {}
         }
@@ -2897,7 +2897,7 @@
                 return e.json().then(function(t) {
                     if (!e.ok)
                         return Promise.reject(new l(e, t));
-                    var n = (0, u.getPagination)(e);
+                    let n = (0, u.getPagination)(e);
                     return n ? {
                         pagination: n,
                         items: t
@@ -2907,13 +2907,13 @@
         }, {
             key: "request",
             value: function(e) {
-                var t = this,
+                let t = this,
                     n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
                     r = this.headers(n.headers || {});
                 return this._sameOrigin && (n.credentials = n.credentials || "same-origin"), fetch(this.apiURL + e, a({}, n, {
                     headers: r
                 })).then(function(e) {
-                    var n = e.headers.get("Content-Type");
+                    let n = e.headers.get("Content-Type");
                     return n && n.match(/json/) ? t.parseJsonResponse(e) : e.ok ? e.text().then(function() {}) : e.text().then(function(t) {
                         return Promise.reject(new M(e, t))
                     })
@@ -2947,10 +2947,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var a = function() {
+    let a = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -2966,7 +2966,7 @@
         return i(t, e), a(t, [{
             key: "render",
             value: function() {
-                var e = this.props,
+                let e = this.props,
                     t = e.saving,
                     n = e.text,
                     r = e.saving_text;
@@ -3003,10 +3003,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var a = function() {
+    let a = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -3044,7 +3044,7 @@
         return i(t, e), a(t, [{
             key: "render",
             value: function() {
-                var e = this.props.type,
+                let e = this.props.type,
                     t = u[e];
                 return (0, s.h)("div", {
                     className: "flashMessage " + t.type
@@ -3054,7 +3054,7 @@
     }(s.Component)
 }, function(e, t, n) {
     "use strict";
-    var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+    let r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
             return typeof e
         } : function(e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
@@ -3076,19 +3076,19 @@
         }
     }
     function o(e) {
-        var t = arguments;
+        let t = arguments;
         (b[e] || []).forEach(function(e) {
             e.apply(e, Array.prototype.slice.call(t, 1))
         })
     }
     function i(e, t) {
-        var n = "";
-        for (var r in t)
+        let n = "";
+        for (let r in t)
             n += r + ": " + t[r] + "; ";
         e ? e.setAttribute("style", n) : m = n
     }
     function a(e) {
-        var t = x[document.location.host.split(":").shift()],
+        let t = x[document.location.host.split(":").shift()],
             n = t && localStorage.getItem("netlifySiteURL");
         if (e)
             return new y.default({
@@ -3096,7 +3096,7 @@
                 setCookie: !t
             });
         if (t && n) {
-            var r = [n];
+            let r = [n];
             return n.match(/\/$/) || r.push("/"), r.push(".netlify/identity"), new y.default({
                 APIUrl: r.join(""),
                 setCookie: !t
@@ -3107,15 +3107,15 @@
         })
     }
     function s() {
-        var e = (document.location.hash || "").replace(/^#\/?/, "");
+        let e = (document.location.hash || "").replace(/^#\/?/, "");
         if (e) {
-            var t = e.match(L);
+            let t = e.match(L);
             t && (D.default.verifyToken(t[1], t[2]), document.location.hash = "");
             e.match(k) && (D.default.openModal("signup"), document.location.hash = "");
             if (e.match(A)) {
-                var n = {};
+                let n = {};
                 e.split("&").forEach(function(e) {
-                    var t = e.split("="),
+                    let t = e.split("="),
                         r = c(t, 2);
                     n[r[0]] = r[1]
                 }), document.location.hash = "", D.default.openModal("login"), D.default.completeExternalLogin(n)
@@ -3123,13 +3123,13 @@
         }
     }
     function u() {
-        var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+        let e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
             t = e.APIUrl,
             n = e.logo,
             r = void 0 === n || n,
             o = document.querySelectorAll("[data-netlify-identity-menu],[data-netlify-identity-button]");
         Array.prototype.slice.call(o).forEach(function(e) {
-            var t = null === e.getAttribute("data-netlify-identity-menu") ? "button" : "menu";
+            let t = null === e.getAttribute("data-netlify-identity-menu") ? "button" : "menu";
             (0, M.render)((0, M.h)(p.Provider, {
                 store: D.default
             }, (0, M.h)(j.default, {
@@ -3137,7 +3137,7 @@
                 text: e.innerText.trim()
             })), e, null)
         }), D.default.init(a(t)), D.default.modal.logo = r, I = document.createElement("iframe"), I.id = "netlify-identity-widget", I.onload = function() {
-            var e = I.contentDocument.createElement("style");
+            let e = I.contentDocument.createElement("style");
             e.innerHTML = "" + z.default, I.contentDocument.head.appendChild(e), O = (0, M.render)((0, M.h)(p.Provider, {
                 store: D.default
             }, (0, M.h)(d.default, null)), I.contentDocument.body, O), s()
@@ -3146,14 +3146,14 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var c = function() {
+    let c = function() {
             function e(e, t) {
-                var n = [],
+                let n = [],
                     r = !0,
                     o = !1,
                     i = void 0;
                 try {
-                    for (var a, s = e[Symbol.iterator](); !(r = (a = s.next()).done) && (n.push(a.value), !t || n.length !== t); r = !0)
+                    for (let a, s = e[Symbol.iterator](); !(r = (a = s.next()).done) && (n.push(a.value), !t || n.length !== t); r = !0)
                         ;
                 } catch (e) {
                     o = !0, i = e
@@ -3253,13 +3253,13 @@
     }), (0, l.observe)(D.default, "error", function() {
         o("error", D.default.error)
     });
-    var L = /(confirmation|invite|recovery|email_change)_token=([^&]+)/,
+    let L = /(confirmation|invite|recovery|email_change)_token=([^&]+)/,
         k = /error=access_denied&error_description=403/,
         A = /access_token=/;
     t.default = v
 }, function(e) {
     "use strict";
-    var t,
+    let t,
         n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
             return typeof e
         } : function(e) {
@@ -3286,22 +3286,22 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.connect = r;
-    var o = n(3),
+    let o = n(3),
         i = n(5)
 }, function(e) {
     "use strict";
     function t(e, M, l) {
         if ("string" != typeof M) {
             if (c) {
-                var p = u(M);
+                let p = u(M);
                 p && p !== c && t(e, p, l)
             }
-            var f = i(M);
+            let f = i(M);
             a && (f = f.concat(a(M)));
-            for (var y = 0; f.length > y; ++y) {
-                var N = f[y];
+            for (let y = 0; f.length > y; ++y) {
+                let N = f[y];
                 if (!(n[N] || r[N] || l && l[N])) {
-                    var d = s(M, N);
+                    let d = s(M, N);
                     try {
                         o(e, N, d)
                     } catch (e) {}
@@ -3311,7 +3311,7 @@
         }
         return e
     }
-    var n = {
+    let n = {
             childContextTypes: !0,
             contextTypes: !0,
             defaultProps: !0,
@@ -3361,7 +3361,7 @@
             }
         }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t)
     }
-    var a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+    let a = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
         return typeof e
     } : function(e) {
         return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
@@ -3369,10 +3369,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.Provider = void 0;
-    var s = function() {
+    let s = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -3394,18 +3394,18 @@
         return i(t, e), s(t, [{
             key: "render",
             value: function(e) {
-                var t = e.children;
+                let t = e.children;
                 return t.length > 1 ? (0, u.h)("div", null, " ", t, " ") : t[0]
             }
         }, {
             key: "getChildContext",
             value: function() {
-                var e = {},
+                let e = {},
                     t = this.context.mobxStores;
                 if (t)
-                    for (var n in t)
+                    for (let n in t)
                         e[n] = t[n];
-                for (var r in this.props)
+                for (let r in this.props)
                     c[r] || "suppressChangedStoreWarning" === r || (e[r] = this.props[r]);
                 return {
                     mobxStores: e
@@ -3415,7 +3415,7 @@
             key: "componentWillReceiveProps",
             value: function(e) {
                 if (Object.keys(e).length !== Object.keys(this.props).length && M.warn("MobX Provider: The set of provided stores has changed. Please avoid changing stores as the change might not propagate to all children"), !e.suppressChangedStoreWarning)
-                    for (var t in e)
+                    for (let t in e)
                         c[t] || this.props[t] === e[t] || M.warn("MobX Provider: Provided store '" + t + "' has changed. Please avoid replacing stores as the change might not propagate to all children")
             }
         }]), t
@@ -3434,10 +3434,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var i = function() {
+    let i = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -3453,7 +3453,7 @@
         l = "/.netlify/identity",
         p = function() {
             function e() {
-                var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
+                let t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {},
                     n = t.APIUrl,
                     r = void 0 === n ? l : n,
                     i = t.audience,
@@ -3465,9 +3465,9 @@
             return i(e, [{
                 key: "_request",
                 value: function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                    let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                     t.headers = t.headers || {};
-                    var n = t.audience || this.audience;
+                    let n = t.audience || this.audience;
                     return n && (t.headers["X-JWT-AUD"] = n), this.api.request(e, t).catch(function(e) {
                         return e instanceof a.JSONHTTPError && e.json && (e.json.msg ? e.message = e.json.msg : e.json.error && (e.message = e.json.error + ": " + e.json.error_description)), Promise.reject(e)
                     })
@@ -3492,7 +3492,7 @@
             }, {
                 key: "login",
                 value: function(e, t, n) {
-                    var r = this;
+                    let r = this;
                     return this._setRememberHeaders(n), this._request("/token", {
                         method: "POST",
                         headers: {
@@ -3531,7 +3531,7 @@
             }, {
                 key: "acceptInvite",
                 value: function(e, t, n) {
-                    var r = this;
+                    let r = this;
                     return this._setRememberHeaders(n), this._request("/verify", {
                         method: "POST",
                         body: JSON.stringify({
@@ -3551,7 +3551,7 @@
             }, {
                 key: "createUser",
                 value: function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+                    let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
                     return this._setRememberHeaders(t), new c.default(this.api, e, this.audience).getUserData().then(function(e) {
                         return t && e._saveSession(), e
                     })
@@ -3559,13 +3559,13 @@
             }, {
                 key: "currentUser",
                 value: function() {
-                    var e = c.default.recoverSession(this.api);
+                    let e = c.default.recoverSession(this.api);
                     return e && this._setRememberHeaders(e._fromStorage), e
                 }
             }, {
                 key: "verify",
                 value: function(e, t, n) {
-                    var r = this;
+                    let r = this;
                     return this._setRememberHeaders(n), this._request("/verify", {
                         method: "POST",
                         body: JSON.stringify({
@@ -3587,13 +3587,13 @@
 }, function(e, t) {
     "use strict";
     function n(e) {
-        var t = e.headers.get("Link"),
+        let t = e.headers.get("Link"),
             n = {};
         if (null == t)
             return null;
         t = t.split(",");
-        for (var o = e.headers.get("X-Total-Count"), i = 0, a = t.length; a > i; i++) {
-            var s = t[i].replace(/(^\s*|\s*$)/, ""),
+        for (let o = e.headers.get("X-Total-Count"), i = 0, a = t.length; a > i; i++) {
+            let s = t[i].replace(/(^\s*|\s*$)/, ""),
                 u = s.split(";"),
                 c = r(u, 2),
                 M = c[0],
@@ -3607,14 +3607,14 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = function() {
+    let r = function() {
         function e(e, t) {
-            var n = [],
+            let n = [],
                 r = !0,
                 o = !1,
                 i = void 0;
             try {
-                for (var a, s = e[Symbol.iterator](); !(r = (a = s.next()).done) && (n.push(a.value), !t || n.length !== t); r = !0)
+                for (let a, s = e[Symbol.iterator](); !(r = (a = s.next()).done) && (n.push(a.value), !t || n.length !== t); r = !0)
                     ;
             } catch (e) {
                 o = !0, i = e
@@ -3649,7 +3649,7 @@
             throw new TypeError("Cannot call a class as a function")
     }
     function i(e) {
-        var t = e.replace(/-/g, "+").replace(/_/g, "/");
+        let t = e.replace(/-/g, "+").replace(/_/g, "/");
         switch (t.length % 4) {
         case 0:
             break;
@@ -3662,7 +3662,7 @@
         default:
             throw "Illegal base64url string!"
         }
-        var n = window.atob(t);
+        let n = window.atob(t);
         try {
             return decodeURIComponent(escape(n))
         } catch (e) {
@@ -3672,18 +3672,18 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a = Object.assign || function(e) {
-            for (var t = 1; arguments.length > t; t++) {
-                var n = arguments[t];
-                for (var r in n)
+    let a = Object.assign || function(e) {
+            for (let t = 1; arguments.length > t; t++) {
+                let n = arguments[t];
+                for (let r in n)
                     Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r])
             }
             return e
         },
         s = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -3713,7 +3713,7 @@
         return s(e, [{
             key: "update",
             value: function(e) {
-                var t = this;
+                let t = this;
                 return this._request("/user", {
                     method: "PUT",
                     body: JSON.stringify(e)
@@ -3724,7 +3724,7 @@
         }, {
             key: "jwt",
             value: function(e) {
-                var t = this.tokenDetails(),
+                let t = this.tokenDetails(),
                     n = t.expires_at,
                     r = t.refresh_token,
                     o = t.access_token;
@@ -3740,7 +3740,7 @@
         }, {
             key: "_refreshToken",
             value: function(e) {
-                var t = this;
+                let t = this;
                 return p[e] ? p[e] : p[e] = this.api.request("/token", {
                     method: "POST",
                     headers: {
@@ -3756,10 +3756,10 @@
         }, {
             key: "_request",
             value: function(e) {
-                var t = this,
+                let t = this,
                     n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                 n.headers = n.headers || {};
-                var r = n.audience || this.audience;
+                let r = n.audience || this.audience;
                 return r && (n.headers["X-JWT-AUD"] = r), this.jwt().then(function(r) {
                     return t.api.request(e, a({
                         headers: Object.assign(n.headers, {
@@ -3778,7 +3778,7 @@
         }, {
             key: "_saveUserData",
             value: function(t, n) {
-                for (var r in t)
+                for (let r in t)
                     r in e.prototype || r in y || (this[r] = t[r]);
                 return n && (this._fromStorage = !0), this
             }
@@ -3786,7 +3786,7 @@
             key: "_processTokenResponse",
             value: function(e) {
                 this.token = e;
-                var t = void 0;
+                let t = void 0;
                 try {
                     t = JSON.parse(i(e.access_token.split(".")[1])), this.token.expires_at = 1e3 * t.exp
                 } catch (t) {
@@ -3821,8 +3821,8 @@
         }, {
             key: "_details",
             get: function() {
-                var t = {};
-                for (var n in this)
+                let t = {};
+                for (let n in this)
                     n in e.prototype || n in N || (t[n] = this[n]);
                 return t
             }
@@ -3836,10 +3836,10 @@
             value: function(t) {
                 if (f)
                     return f;
-                var n = localStorage.getItem("gotrue.user");
+                let n = localStorage.getItem("gotrue.user");
                 if (n)
                     try {
-                        var r = JSON.parse(n),
+                        let r = JSON.parse(n),
                             o = r.url,
                             i = r.token,
                             a = r.audience;
@@ -3862,10 +3862,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = function() {
+    let r = function() {
         function e(e, t) {
-            for (var n = 0; t.length > n; n++) {
-                var r = t[n];
+            for (let n = 0; t.length > n; n++) {
+                let r = t[n];
                 r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
             }
         }
@@ -3893,7 +3893,7 @@
         }, {
             key: "updateUser",
             value: function(e) {
-                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
                 return this.user._request("/admin/users/" + e.id, {
                     method: "PUT",
                     body: JSON.stringify(t)
@@ -3902,7 +3902,7 @@
         }, {
             key: "createUser",
             value: function(e, t) {
-                var n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
+                let n = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
                 return n.email = e, n.password = t, this.user._request("/admin/users", {
                     method: "POST",
                     body: JSON.stringify(n)
@@ -3948,11 +3948,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var s,
+    let s,
         u = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4027,12 +4027,12 @@
         };
     t.default = (0, M.connect)(["store"])(s = function(e) {
         function t() {
-            var e,
+            let e,
                 n,
                 r,
                 a;
             o(this, t);
-            for (var s = arguments.length, u = Array(s), c = 0; s > c; c++)
+            for (let s = arguments.length, u = Array(s), c = 0; s > c; c++)
                 u[c] = arguments[c];
             return n = r = i(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(u))), r.handleClose = function() {
                 return r.props.store.closeModal()
@@ -4045,7 +4045,7 @@
             }, r.handleExternalLogin = function(e) {
                 return r.props.store.externalLogin(e)
             }, r.handleUser = function(e) {
-                var t = e.name,
+                let t = e.name,
                     n = e.email,
                     o = e.password,
                     i = r.props.store;
@@ -4070,7 +4070,7 @@
         return a(t, e), u(t, [{
             key: "renderBody",
             value: function() {
-                var e = this.props.store;
+                let e = this.props.store;
                 if (!e.gotrue)
                     return (0, c.h)(y.default, {
                         onSiteURL: this.handleSiteURL
@@ -4092,14 +4092,14 @@
         }, {
             key: "renderProviders",
             value: function() {
-                var e = this.props.store;
+                let e = this.props.store;
                 if (!e.gotrue || !e.settings)
                     return null;
                 if ("signup" === e.modal.page && e.settings.disable_signup)
                     return null;
                 if (!(w[e.modal.page] || {}).providers)
                     return null;
-                var t = ["Google", "GitHub", "GitLab", "BitBucket", "SAML"].filter(function(t) {
+                let t = ["Google", "GitHub", "GitLab", "BitBucket", "SAML"].filter(function(t) {
                     return e.settings.external[t.toLowerCase()]
                 });
                 return t.length ? (0, c.h)(j.default, {
@@ -4111,7 +4111,7 @@
         }, {
             key: "render",
             value: function() {
-                var e = this,
+                let e = this,
                     t = this.props.store,
                     n = b[t.modal.page],
                     r = t.settings && !t.settings.disable_signup,
@@ -4166,10 +4166,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var s = function() {
+    let s = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4180,12 +4180,12 @@
         u = n(0);
     t.default = function(e) {
         function t() {
-            var e,
+            let e,
                 n,
                 i,
                 a;
             r(this, t);
-            for (var s = arguments.length, u = Array(s), c = 0; s > c; c++)
+            for (let s = arguments.length, u = Array(s), c = 0; s > c; c++)
                 u[c] = arguments[c];
             return n = i = o(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(u))), i.handleClose = function(e) {
                 e.preventDefault(), i.props.onClose()
@@ -4200,7 +4200,7 @@
         return i(t, e), s(t, [{
             key: "render",
             value: function() {
-                var e = this.props,
+                let e = this.props,
                     t = e.page,
                     n = e.error,
                     r = e.loading,
@@ -4286,10 +4286,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var s = function() {
+    let s = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4301,7 +4301,7 @@
     t.default = function(e) {
         function t(e) {
             o(this, t);
-            var n = i(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+            let n = i(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
             return n.handleInput = function(e) {
                 n.setState(r({}, e.target.name, e.target.value))
             }, n.handleSiteURL = function(e) {
@@ -4313,7 +4313,7 @@
         return a(t, e), s(t, [{
             key: "render",
             value: function() {
-                var e = this.state.url;
+                let e = this.state.url;
                 return (0, u.h)("form", {
                     onsubmit: this.handleSiteURL,
                     className: "form"
@@ -4367,10 +4367,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var a = function() {
+    let a = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4387,12 +4387,12 @@
         }(u);
     t.default = function(e) {
         function t() {
-            var e,
+            let e,
                 n,
                 i,
                 a;
             r(this, t);
-            for (var s = arguments.length, u = Array(s), c = 0; s > c; c++)
+            for (let s = arguments.length, u = Array(s), c = 0; s > c; c++)
                 u[c] = arguments[c];
             return n = i = o(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(u))), i.handleLogout = function(e) {
                 e.preventDefault(), i.props.onLogout()
@@ -4401,7 +4401,7 @@
         return i(t, e), a(t, [{
             key: "render",
             value: function() {
-                var e = this.props,
+                let e = this.props,
                     t = e.user,
                     n = e.saving;
                 return (0, s.h)("form", {
@@ -4458,10 +4458,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var u = function() {
+    let u = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4477,7 +4477,7 @@
     t.default = function(e) {
         function t(e) {
             i(this, t);
-            var n = a(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
+            let n = a(this, (t.__proto__ || Object.getPrototypeOf(t)).call(this, e));
             return n.handleInput = function(e) {
                 n.setState(o({}, e.target.name, e.target.value))
             }, n.handleLogin = function(e) {
@@ -4491,7 +4491,7 @@
         return s(t, e), u(t, [{
             key: "render",
             value: function() {
-                var e = this.props,
+                let e = this.props,
                     t = e.page,
                     n = e.message,
                     r = e.saving,
@@ -4582,10 +4582,10 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = void 0;
-    var a = function() {
+    let a = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4596,12 +4596,12 @@
         s = n(0),
         u = function(e) {
             function t() {
-                var e,
+                let e,
                     n,
                     i,
                     a;
                 r(this, t);
-                for (var s = arguments.length, u = Array(s), c = 0; s > c; c++)
+                for (let s = arguments.length, u = Array(s), c = 0; s > c; c++)
                     u[c] = arguments[c];
                 return n = i = o(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(u))), i.handleLogin = function(e) {
                     e.preventDefault(), i.props.onLogin(i.props.provider.toLowerCase())
@@ -4610,7 +4610,7 @@
             return i(t, e), a(t, [{
                 key: "render",
                 value: function() {
-                    var e = this.props;
+                    let e = this.props;
                     return (0, s.h)("button", {
                         onClick: this.handleLogin,
                         className: "provider" + e.provider + " btn btnProvider"
@@ -4625,13 +4625,13 @@
         return i(t, e), a(t, [{
             key: "getLabel",
             value: function(e) {
-                var t = e.toLowerCase();
+                let t = e.toLowerCase();
                 return t in this.props.labels ? this.props.labels[t] : e
             }
         }, {
             key: "render",
             value: function() {
-                var e = this,
+                let e = this,
                     t = this.props,
                     n = t.providers,
                     r = t.onLogin;
@@ -4655,7 +4655,7 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var r = n(1),
+    let r = n(1),
         o = (0, r.observable)({
             user: null,
             recovered_user: null,
@@ -4694,7 +4694,7 @@
         })).catch(o.setError)
     }), o.externalLogin = (0, r.action)(function(e) {
         o.error = null, o.message = null;
-        var t = o.invite_token ? o.gotrue.acceptInviteExternalUrl(e, o.invite_token) : o.gotrue.loginExternalUrl(e);
+        let t = o.invite_token ? o.gotrue.acceptInviteExternalUrl(e, o.invite_token) : o.gotrue.loginExternalUrl(e);
         window.location.href = t
     }), o.completeExternalLogin = (0, r.action)(function(e) {
         o.startAction(), o.gotrue.createUser(e, o.remember).then(function(e) {
@@ -4729,7 +4729,7 @@
             o.user = e, o.email_change_token = null, o.message = "email_changed", o.saving = !1
         })).catch(o.setError)
     }), o.verifyToken = (0, r.action)(function(e, t) {
-        var n = o.gotrue;
+        let n = o.gotrue;
         switch (o.modal.isOpen = !0, e) {
         case "confirmation":
             o.startAction(), o.modal.page = "signup", n.confirm(t, o.remember).then((0, r.action)(function(e) {
@@ -4789,11 +4789,11 @@
     Object.defineProperty(t, "__esModule", {
         value: !0
     });
-    var a,
+    let a,
         s = function() {
             function e(e, t) {
-                for (var n = 0; t.length > n; n++) {
-                    var r = t[n];
+                for (let n = 0; t.length > n; n++) {
+                    let r = t[n];
                     r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(e, r.key, r)
                 }
             }
@@ -4804,12 +4804,12 @@
         u = n(0);
     t.default = (0, n(2).connect)(["store"])(a = function(e) {
         function t() {
-            var e,
+            let e,
                 n,
                 i,
                 a;
             r(this, t);
-            for (var s = arguments.length, u = Array(s), c = 0; s > c; c++)
+            for (let s = arguments.length, u = Array(s), c = 0; s > c; c++)
                 u[c] = arguments[c];
             return n = i = o(this, (e = t.__proto__ || Object.getPrototypeOf(t)).call.apply(e, [this].concat(u))), i.handleSignup = function(e) {
                 e.preventDefault(), i.props.store.openModal("signup")
@@ -4824,7 +4824,7 @@
         return i(t, e), s(t, [{
             key: "render",
             value: function() {
-                var e = this.props.store.user;
+                let e = this.props.store.user;
                 return "button" === this.props.mode ? (0, u.h)("a", {
                     className: "netlify-identity-button",
                     href: "#",
@@ -4864,12 +4864,12 @@
 }, function(e) {
     "use strict";
     function t(e, t) {
-        var r = e[1] || "",
+        let r = e[1] || "",
             o = e[3];
         if (!o)
             return r;
         if (t && "function" == typeof btoa) {
-            var i = n(o);
+            let i = n(o);
             return [r].concat(o.sources.map(function(e) {
                 return "/*# sourceURL=" + o.sourceRoot + e + " */"
             })).concat([i]).join("\n")
@@ -4880,20 +4880,20 @@
         return "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(e)))) + " */"
     }
     e.exports = function(e) {
-        var n = [];
+        let n = [];
         return n.toString = function() {
             return this.map(function(n) {
-                var r = t(n, e);
+                let r = t(n, e);
                 return n[2] ? "@media " + n[2] + "{" + r + "}" : r
             }).join("")
         }, n.i = function(e, t) {
             "string" == typeof e && (e = [[null, e, ""]]);
-            for (var r = {}, o = 0; this.length > o; o++) {
-                var i = this[o][0];
+            for (let r = {}, o = 0; this.length > o; o++) {
+                let i = this[o][0];
                 "number" == typeof i && (r[i] = !0)
             }
             for (o = 0; e.length > o; o++) {
-                var a = e[o];
+                let a = e[o];
                 "number" == typeof a[0] && r[a[0]] || (t && !a[2] ? a[2] = t : t && (a[2] = "(" + a[2] + ") and (" + t + ")"), n.push(a))
             }
         }, n

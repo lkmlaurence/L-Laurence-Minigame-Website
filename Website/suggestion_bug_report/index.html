@@ -18,7 +18,7 @@
                 <h4>Contact Form</h4>
                 
         
-                <h1 class="contact"><form name="contact" method="POST" data-netlify="true">
+                <h1 class="contact"><form name="contact" method="POST" data-netlify-recaptcha="true" netlify-honeypot="bot-field" data-netlify="true">
                         <p>
                           <label>Your Name: <input type="text" name="name" /></label>   
                         </p>
@@ -26,7 +26,7 @@
                           <label>Your Contact Email: <input type="email" name="email" /></label>
                         </p>
                         <p>
-                          <label>Suggestion/Bug Report/Questions:<select name="do" multiple>
+                          <label>Suggestion/Bug Report/Questions:<select name="Suggestion/bug/questions" multiple>
                             <option value="suggestion">Suggestion</option>
                             <option value="bug">Bug</option>
                             <option value="questions">Questions</option>
@@ -35,10 +35,12 @@
                         <p>
                           <label>Message: <textarea name="message"></textarea></label>
                         </p>
+                        <div data-netlify-recaptcha="true"></div>
                         <p>
                           <div class="privatepolicy">
-                          <h5>By creating an account, you agree to our <a href="/private_policy_statement/private_policy_statement.html" style="color:dodgerblue">Terms & Privacy</a></h5>
+                          <h5>By sending this form, you agree to our <a href="/private_policy_statement/private_policy_statement.html" style="color:dodgerblue">Terms & Privacy</a></h5>
                         </div>
+                       
                           <button type="submit">Send</button>
                           
                         </p>
