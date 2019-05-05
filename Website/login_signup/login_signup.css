@@ -4,6 +4,9 @@ header{
     background-size: cover;
     background-position: center;
 }
+
+
+
 ul{
     float: right;
     list-style-type: none;
@@ -28,51 +31,19 @@ ul li a:hover{
     color: #000;
 
 }
-h2{
+
+h3{
     position: absolute;
-    color: #fff;
-    top: 19%;
-    font-size: 40px;
-    left: 45%;
-    
-
-}
-
-.hitbear h3{
-    position: absolute;
-    top: 36%;
-    color: orange;
-    left: 15%;
-    font-size: 40px;
-
-}
-
-.hitbear h5{
-    color: rgba(235, 66, 0, 0.671);
     top: 45%;
-    position: absolute;
-    left: 15%;
-    font-size: 20px;
-    
-}
-
-.hitbearpresstoplay {
-    position: absolute;
-    color: orangered;
-    top: 47%;
-    left: 30%;
+    left: 45%;
 
 }
 
-.hitbearphoto{
+h1{
     position: absolute;
-    top: 60%;
-    left: 14%;
+    top: 25%;
+    left: 38%;
+    font-size: 50px;
+    color: white
+}
 
-}
-.login_signup{
-    position: absolute;
-    font-size: 15px;
-    left: 78%;
-    top: 9%;
-}

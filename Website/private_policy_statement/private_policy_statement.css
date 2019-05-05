@@ -1,8 +1,15 @@
 header{
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/a502748f1f97c53a9447200eb8c6fdfa.jpg);
-    height: 200vh;
+    height: 170vh;
     background-size: cover;
     background-position: center;
+}
+
+.login_signup{
+    position: absolute;
+    font-size: 15px;
+    left: 75%;
+    top: 9%;
 }
 ul{
     float: right;
@@ -133,11 +140,17 @@ h3{
     color: white
 }
 
-h7{
+.priviacystatementbutton h6{
     font-size: 10px;
     position: absolute;
-    top: 120%;
+   top: 160%;
+   left: 50%;
 
 }
-
+.login_signup{
+    position: absolute;
+    font-size: 15px;
+    left: 75%;
+    top: 9%;
+}
 

@@ -64,15 +64,16 @@ ul li a:hover{
 .title{
     position: absolute;
     top: 35%;
-    left: 34%;
+    left: 35%;
     transform: translate(-50%-50%);
-    color: orange
+    color: orange;
+    font-size: 43px;
 }
 
 .title h2{
     color: #fff;
     font-size: 50px;
-    left: 20%;
+    left: 30%;
     color: orange
 
 }
@@ -94,8 +95,14 @@ ul li a:hover{
 .titlepicture{
     position: absolute;
     top: 15%;
-    left : 40%
+    left:41%;
 }
 
 
 
+.login_signup{
+    position: absolute;
+    font-size: 15px;
+    left: 78%;
+    top: 9%;
+}

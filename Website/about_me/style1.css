@@ -48,3 +48,9 @@ h6{
     
 
 }
+.login_signup{
+    position: absolute;
+    font-size: 15px;
+    left: 78%;
+    top: 9%;
+}
