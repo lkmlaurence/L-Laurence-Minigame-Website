@@ -1,19 +1,21 @@
 let myGamePiece;
 let myObstacles = [];
 let myScore;
-if (screen.width <= 699) {
-    document.location = "/mobile_gravity/mobilegravity.html";
-    }
+if (window.matchMedia("(orientation: landscape)").matches) {
+   alert(" Please use your phone erectly to play this game!請把你的手機豎直，否則會影響遊戲體驗！")
+ }
+ 
+
 function startGame() {
     myGamePiece = new component(30, 30, "red", 10, 120);
-    myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+    myScore = new component("30px", "Consolas", "black", 20, 40, "text");
     myGameArea.start();
 }
 
 let myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 1000;
+        this.canvas.width = 400;
         this.canvas.height = 600;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);

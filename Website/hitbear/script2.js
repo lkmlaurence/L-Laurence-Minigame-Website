@@ -1,6 +1,7 @@
 
 
 jQuery(document).ready(function(){
+ 
     let score=0;
     
     function game_over(){
