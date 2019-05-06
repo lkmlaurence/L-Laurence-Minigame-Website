@@ -1,6 +1,6 @@
 header{
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/a502748f1f97c53a9447200eb8c6fdfa.jpg);
-    height: 100vh;
+    height: 200vh;
     background-size: cover;
     background-position: center;
 }
@@ -75,4 +75,40 @@ h2{
     font-size: 15px;
     left: 78%;
     top: 9%;
+}
+
+.gravity h3{
+    position: absolute;
+    top: 87%;
+    color: #ff0fff;
+    left: 15%;
+    font-size: 40px;
+
+
+}
+
+
+.gravity h5{
+    color: #ff00ff;
+    position: absolute;
+    top: 99%;
+    left: 15%;
+    font-size: 20px;
+}
+
+.gravitypresstoplay{
+position: absolute;
+color: palevioletred;
+top: 101%;
+left: 30%;
+
+}
+
+.gravityphoto{
+    position: absolute;
+    top: 109%;
+    left:13%;
+    padding: 20px 20px;
+    font-size: 2px;
+    
 }

@@ -12,7 +12,7 @@ function startGame() {
 let myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 1300;
+        this.canvas.width = 1000;
         this.canvas.height = 600;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
@@ -92,14 +92,14 @@ function updateGameArea() {
         minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        minGap = 40;
+        minGap = 70;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(10, height, "green", x, 0));
-        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+        myObstacles.push(new component(10, height, "purple", x, 0));
+        myObstacles.push(new component(10, x - height - gap, "purple", x, height + gap));
     }
     for (i = 0; i < myObstacles.length; i += 1) {
-        myObstacles[i].speedX = -1;
+        myObstacles[i].speedX = -3;
         myObstacles[i].newPos();
         myObstacles[i].update();
     }

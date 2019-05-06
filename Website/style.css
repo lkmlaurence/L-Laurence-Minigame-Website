@@ -64,9 +64,9 @@ ul li a:hover{
 .title{
     position: absolute;
     top: 35%;
-    left: 35%;
+    left: 30%;
     transform: translate(-50%-50%);
-    color: orange;
+    color: #ff0fff;
     font-size: 43px;
 }
 
@@ -95,7 +95,10 @@ ul li a:hover{
 .titlepicture{
     position: absolute;
     top: 15%;
-    left:41%;
+    left:35%;
+    padding: 20px 20px;
+    font-size: 2px;
+    
 }
 
 
