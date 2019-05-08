@@ -10,9 +10,8 @@ button{
 }
 
 h5{
-    color : blueviolet;
-    font-size: 15px;
-    position : absolute;
-    top : 90%;
+ position : absolute;
+ font-size: 40px;
+ top: 76%;
 
 };
