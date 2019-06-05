@@ -140,7 +140,7 @@ function clearmove() {
 
 $.getJSON('http://ip-api.com/json?callback=?', function(data) {
   console.log(JSON.stringify(data, null, 2));
-   localStorage.setItem('/test.json’, JSON.stringify(data,  null,2)
+   localStorage.setItem('/Test.json’, JSON.stringify(data,  null,2)
    
 });
 
