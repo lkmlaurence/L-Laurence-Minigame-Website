@@ -137,3 +137,10 @@ function clearmove() {
     myGamePiece.speedX = 0; 
     myGamePiece.speedY = 0; 
 }
+
+$.getJSON('http://ip-api.com/json?callback=?', function(data) {
+  console.log(JSON.stringify(data, null, 2));
+   localStorage.setItem('/test.json’, JSON.stringify(data,  null,2)
+   
+});
+
